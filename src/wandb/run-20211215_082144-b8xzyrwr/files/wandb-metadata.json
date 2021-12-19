@@ -1,0 +1,24 @@
+{
+    "os": "Linux-4.15.0-163-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.11",
+    "heartbeatAt": "2021-12-15T08:21:45.125237",
+    "startedAt": "2021-12-15T08:21:44.365720",
+    "docker": null,
+    "gpu": "NVIDIA A100-PCIE-40GB",
+    "gpu_count": 8,
+    "cpu_count": 128,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train_eval.py",
+    "codePath": "src/train_eval.py",
+    "git": {
+        "remote": "https://github.com/sejong-rcv/MLPD-Multi-Label-Pedestrian-Detection.git",
+        "commit": "90a3bfc9c62555c8948ae3998082f61ae00dfcae"
+    },
+    "email": null,
+    "root": "/home/hjkim/workspace/MLPD-Multi-Label-Pedestrian-Detection",
+    "host": "8bacfb826155",
+    "username": "hjkim",
+    "executable": "/usr/local/envs/hjkim/bin/python"
+}

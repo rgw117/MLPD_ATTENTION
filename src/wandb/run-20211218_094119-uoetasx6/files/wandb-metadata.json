@@ -1,0 +1,24 @@
+{
+    "os": "Linux-4.15.0-163-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.11",
+    "heartbeatAt": "2021-12-18T09:41:20.712850",
+    "startedAt": "2021-12-18T09:41:19.966333",
+    "docker": null,
+    "gpu": "NVIDIA A100-PCIE-40GB",
+    "gpu_count": 8,
+    "cpu_count": 128,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train_eval.py",
+    "codePath": "src/train_eval.py",
+    "git": {
+        "remote": null,
+        "commit": null
+    },
+    "email": null,
+    "root": "/home/hjkim/workspace/MLPD-Multi-Label-Pedestrian-Detection",
+    "host": "8bacfb826155",
+    "username": "hjkim",
+    "executable": "/usr/local/envs/hjkim/bin/python"
+}

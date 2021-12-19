@@ -1,0 +1,1158 @@
+
+Loaded base model.
+/usr/local/envs/hjkim/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+[INFO] [2021-12-15 07:17:34,945] Exp time: 2021-12-15_07h17m
+[INFO] [2021-12-15 07:17:34,945] 	path: {'DB_ROOT': '../data/kaist-cvpr15', 'JSON_GT_FILE': 'kaist_annotations_test20.json'}
+[INFO] [2021-12-15 07:17:34,946] 	train: {'day': 'all', 'img_set': 'train-all-02.txt', 'checkpoint': None, 'batch_size': 12, 'start_epoch': 0, 'epochs': 40, 'epochs_since_improvement': 3, 'best_loss': 100.0, 'lr': 0.0001, 'momentum': 0.9, 'weight_decay': 0.0005, 'grad_clip': None, 'print_freq': 10, 'annotation': 'AR-CNN', 'img_transform': Compose(
+    ColorJitter(brightness=[0.7, 1.3], contrast=[0.7, 1.3], saturation=[0.7, 1.3], hue=None)
+    ColorJitterLWIR(brightness=None, contrast=[0.7, 1.3], saturation=None, hue=None)
+), 'co_transform': Compose(
+    TT_RandomHorizontalFlip(p=0.5)
+    TT_RandomResizedCrop(size=[512, 640], scale=(0.25, 4.0), ratio=(0.8, 1.2), interpolation=PIL.Image.BILINEAR)
+    ToTensor()
+    Normalize(mean=[0.3465, 0.3219, 0.2842], std=[0.2358, 0.2265, 0.2274])
+    Normalize(mean=[0.1598], std=[0.0813])
+)}
+[INFO] [2021-12-15 07:17:34,946] 	test: {'result_path': './result', 'day': 'all', 'img_set': 'test-all-20.txt', 'annotation': 'AR-CNN', 'input_size': [512.0, 640.0], 'checkpoint': './jobs/best_checkpoint.pth.tar', 'batch_size': 4, 'eval_batch_size': 1, 'img_transform': Compose(
+), 'co_transform': Compose(
+    Resize(size=[512.0, 640.0], interpolation=PIL.Image.BILINEAR)
+    ToTensor()
+    Normalize(mean=[0.3465, 0.3219, 0.2842], std=[0.2358, 0.2265, 0.2274])
+    Normalize(mean=[0.1598], std=[0.0813])
+)}
+[INFO] [2021-12-15 07:17:34,946] 	dataset: {'workers': 8, 'OBJ_LOAD_CONDITIONS': {'train': {'hRng': [12, inf], 'xRng': [5, 635], 'yRng': [5, 507], 'wRng': [-inf, inf]}, 'test': {'hRng': [-inf, inf], 'xRng': [5, 635], 'yRng': [5, 507], 'wRng': [-inf, inf]}}}
+[INFO] [2021-12-15 07:17:34,946] 	FDZ_case: {'original': ['None', 'None'], 'blackout_r': ['blackout', 'None'], 'blackout_t': ['None', 'blackout'], 'sidesblackout_a': ['SidesBlackout_R', 'SidesBlackout_L'], 'sidesblackout_b': ['SidesBlackout_L', 'SidesBlackout_R'], 'surroundingblackout': ['None', 'SurroundingBlackout']}
+[INFO] [2021-12-15 07:17:34,946] 	device: cuda
+[INFO] [2021-12-15 07:17:34,946] 	exp_name: None
+[INFO] [2021-12-15 07:17:34,946] 	n_classes: 3
+[INFO] [2021-12-15 07:17:34,946] 	upaired_augmentation: ['TT_RandomHorizontalFlip', 'TT_FixedHorizontalFlip', 'TT_RandomResizedCrop']
+[INFO] [2021-12-15 07:17:34,947] 	jobs_dir: jobs/2021-12-15_07h17m_
+[INFO] [2021-12-15 07:17:34,947] Preprocess for training
+[INFO] [2021-12-15 07:17:34,947] Compose(
+    ColorJitter(brightness=[0.7, 1.3], contrast=[0.7, 1.3], saturation=[0.7, 1.3], hue=None)
+    ColorJitterLWIR(brightness=None, contrast=[0.7, 1.3], saturation=None, hue=None)
+)
+[INFO] [2021-12-15 07:17:34,947] Transforms for training
+[INFO] [2021-12-15 07:17:34,947] Compose(
+    TT_RandomHorizontalFlip(p=0.5)
+    TT_RandomResizedCrop(size=[512, 640], scale=(0.25, 4.0), ratio=(0.8, 1.2), interpolation=PIL.Image.BILINEAR)
+    ToTensor()
+    Normalize(mean=[0.3465, 0.3219, 0.2842], std=[0.2358, 0.2265, 0.2274])
+    Normalize(mean=[0.1598], std=[0.0813])
+)
+[INFO] [2021-12-15 07:17:34,947] #################### << Epoch   0 >> ####################
+[INFO] [2021-12-15 07:17:43,355] Iteration: [0/2091]	Batch Time 8.407 (8.407)	Data Time 1.802 (1.802)	Loss 24.7580 (24.7580)	num of Positive tensor([137,   6,   0, 148,   2,   8,   0,   0,  50,   0,  45, 102],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:17:48,237] Iteration: [10/2091]	Batch Time 0.477 (1.208)	Data Time 0.000 (0.164)	Loss 19.3579 (21.8031)	num of Positive tensor([ 0,  0,  0,  0, 53,  0,  0,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:17:53,090] Iteration: [20/2091]	Batch Time 0.487 (0.864)	Data Time 0.000 (0.086)	Loss 15.7796 (19.6319)	num of Positive tensor([  0,  65,   2,  33, 102,   0,   0,  99,  69,   0,  76,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:17:57,996] Iteration: [30/2091]	Batch Time 0.484 (0.743)	Data Time 0.000 (0.058)	Loss 14.6983 (18.3122)	num of Positive tensor([ 0,  0, 46,  0,  0, 55,  0,  0, 73,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:18:02,834] Iteration: [40/2091]	Batch Time 0.484 (0.680)	Data Time 0.000 (0.044)	Loss 13.4073 (17.2393)	num of Positive tensor([  0,  36,  56,   0,   0,  56,  55,  83, 187,   0,  51,   9],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:07,723] Iteration: [50/2091]	Batch Time 0.481 (0.643)	Data Time 0.000 (0.036)	Loss 12.1988 (16.3362)	num of Positive tensor([ 13,   0,   2, 171,   0,  69,   0,   0,  69,  60,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:12,610] Iteration: [60/2091]	Batch Time 0.503 (0.617)	Data Time 0.000 (0.030)	Loss 11.1648 (15.6040)	num of Positive tensor([127,   0,   0,   0,   0,   0,   0,   0,   0,  99,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:17,492] Iteration: [70/2091]	Batch Time 0.484 (0.599)	Data Time 0.000 (0.026)	Loss 10.6839 (15.0502)	num of Positive tensor([ 56,  28,  77,   2,   0,  10,  39,   4,   0,   0,   0, 157],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:22,375] Iteration: [80/2091]	Batch Time 0.485 (0.586)	Data Time 0.000 (0.023)	Loss 10.9144 (14.5828)	num of Positive tensor([ 0,  0, 39, 12,  0, 97,  0,  0,  0, 40,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:18:27,258] Iteration: [90/2091]	Batch Time 0.486 (0.575)	Data Time 0.000 (0.020)	Loss 10.4299 (14.1298)	num of Positive tensor([24,  0, 48,  0,  4, 48,  0,  0, 73,  0, 99,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:18:32,131] Iteration: [100/2091]	Batch Time 0.483 (0.566)	Data Time 0.000 (0.018)	Loss 9.9285 (13.7487)	num of Positive tensor([ 11,   2,   3,   0,   0, 103,   0,   0, 100,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:37,053] Iteration: [110/2091]	Batch Time 0.488 (0.559)	Data Time 0.000 (0.017)	Loss 10.2788 (13.4412)	num of Positive tensor([  0,  17,  41,   0,   0,   0,   0, 100,  18,  13,  68,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:41,982] Iteration: [120/2091]	Batch Time 0.487 (0.554)	Data Time 0.000 (0.015)	Loss 10.2578 (13.1363)	num of Positive tensor([  0,   0,   0,  10,   5,   0,   0, 187,   0,   0,   0,  28],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:46,854] Iteration: [130/2091]	Batch Time 0.485 (0.549)	Data Time 0.000 (0.014)	Loss 8.9680 (12.8526)	num of Positive tensor([ 19,   0,  10,   0,   3, 210,   0,   5,   0,  22,   1,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:51,760] Iteration: [140/2091]	Batch Time 0.513 (0.545)	Data Time 0.000 (0.013)	Loss 9.7813 (12.6349)	num of Positive tensor([  0,   0,  83,   0,  50,   0,  73,   0,  26, 120,  56,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:18:56,652] Iteration: [150/2091]	Batch Time 0.486 (0.541)	Data Time 0.000 (0.012)	Loss 9.4193 (12.4369)	num of Positive tensor([ 2, 12, 73,  0,  0,  0, 48,  3,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:19:01,564] Iteration: [160/2091]	Batch Time 0.485 (0.538)	Data Time 0.000 (0.011)	Loss 9.6377 (12.2520)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0, 85, 43,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:19:06,456] Iteration: [170/2091]	Batch Time 0.490 (0.535)	Data Time 0.000 (0.011)	Loss 9.2458 (12.0953)	num of Positive tensor([  1, 139,   0,   0,   0,   0, 171,   0,  98,  11,  78,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:19:11,340] Iteration: [180/2091]	Batch Time 0.486 (0.533)	Data Time 0.000 (0.010)	Loss 9.0755 (11.9406)	num of Positive tensor([  6,   0,   2,  71,   0,   0, 102,  17,   0,   0,   2,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:19:16,293] Iteration: [190/2091]	Batch Time 0.491 (0.531)	Data Time 0.000 (0.010)	Loss 9.2068 (11.7939)	num of Positive tensor([  0, 121,   0,   0,   0,   0, 126,   0, 105,  29,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:19:21,187] Iteration: [200/2091]	Batch Time 0.492 (0.529)	Data Time 0.000 (0.009)	Loss 8.5431 (11.6391)	num of Positive tensor([113,   0,  72,   0,   0,   0,   0,  80,  34,  23, 114,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:19:26,099] Iteration: [210/2091]	Batch Time 0.488 (0.527)	Data Time 0.000 (0.009)	Loss 8.8598 (11.5201)	num of Positive tensor([  0,   0,   0,   0, 243, 102,   0,   0,  16,  22,   0, 262],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:19:31,006] Iteration: [220/2091]	Batch Time 0.495 (0.525)	Data Time 0.000 (0.008)	Loss 10.0317 (11.4152)	num of Positive tensor([34,  0,  0,  0, 26, 56,  0,  0,  3,  0, 11,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:19:35,906] Iteration: [230/2091]	Batch Time 0.500 (0.524)	Data Time 0.000 (0.008)	Loss 8.7451 (11.2968)	num of Positive tensor([ 0, 27,  0,  0, 23,  0,  0,  0, 17,  0,  8,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:19:40,791] Iteration: [240/2091]	Batch Time 0.486 (0.522)	Data Time 0.000 (0.008)	Loss 8.4410 (11.1873)	num of Positive tensor([  0,   0,   0,   0,   3,  53, 252, 161,   0,   0,  32,  48],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:19:45,689] Iteration: [250/2091]	Batch Time 0.488 (0.521)	Data Time 0.000 (0.007)	Loss 9.7808 (11.1086)	num of Positive tensor([ 18,   0,   0, 125,   0,   9,   0,   0,   9,   0,  48,  18],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:19:50,584] Iteration: [260/2091]	Batch Time 0.488 (0.520)	Data Time 0.000 (0.007)	Loss 7.9761 (11.0171)	num of Positive tensor([ 48,   0,   0, 408,   0,  24,   0,  42,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:19:55,523] Iteration: [270/2091]	Batch Time 0.487 (0.519)	Data Time 0.000 (0.007)	Loss 8.6047 (10.9221)	num of Positive tensor([152,   0, 184,   0,   0,   0,  31,  56,   2,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:00,462] Iteration: [280/2091]	Batch Time 0.489 (0.518)	Data Time 0.000 (0.007)	Loss 8.2137 (10.8416)	num of Positive tensor([ 65,   0,   0, 104,   4, 140,   0,  67,  52,   0, 116,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:05,360] Iteration: [290/2091]	Batch Time 0.485 (0.517)	Data Time 0.000 (0.006)	Loss 7.7433 (10.7588)	num of Positive tensor([  0,   8,   6, 165,   0,   0,   0,   0,   7, 170,  92,  10],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:10,299] Iteration: [300/2091]	Batch Time 0.494 (0.516)	Data Time 0.000 (0.006)	Loss 9.0955 (10.6797)	num of Positive tensor([ 0,  0,  0,  0,  2,  9, 21,  0, 29,  0, 19,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:20:15,167] Iteration: [310/2091]	Batch Time 0.488 (0.515)	Data Time 0.000 (0.006)	Loss 8.8802 (10.5914)	num of Positive tensor([  0,  24,  56,   0,  73,  18,   0,   0,   0, 346,  10,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:20,085] Iteration: [320/2091]	Batch Time 0.488 (0.514)	Data Time 0.000 (0.006)	Loss 8.1248 (10.5242)	num of Positive tensor([71, 51,  1,  0,  0,  0,  0,  0,  0,  4,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:20:25,007] Iteration: [330/2091]	Batch Time 0.490 (0.514)	Data Time 0.000 (0.006)	Loss 8.1808 (10.4672)	num of Positive tensor([  0,  16,  24,   0,  70, 121, 158,   0,   0, 108,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:29,929] Iteration: [340/2091]	Batch Time 0.498 (0.513)	Data Time 0.000 (0.006)	Loss 8.6265 (10.4124)	num of Positive tensor([  0,  53,  22,   0,   0,   0,   0, 115,   0,   0,   2,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:34,837] Iteration: [350/2091]	Batch Time 0.490 (0.513)	Data Time 0.000 (0.005)	Loss 9.5527 (10.3588)	num of Positive tensor([ 1,  0,  0,  0,  0,  0, 19,  0,  0, 89,  0, 16], device='cuda:0')	
+[INFO] [2021-12-15 07:20:39,755] Iteration: [360/2091]	Batch Time 0.497 (0.512)	Data Time 0.000 (0.005)	Loss 8.1726 (10.3007)	num of Positive tensor([  0, 304,  12,  34, 275, 151,  34,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:44,687] Iteration: [370/2091]	Batch Time 0.489 (0.511)	Data Time 0.000 (0.005)	Loss 9.5015 (10.2636)	num of Positive tensor([260,  29,   0,   0,  83,   0,   0, 212,   2,   0,   0, 103],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:49,598] Iteration: [380/2091]	Batch Time 0.490 (0.511)	Data Time 0.000 (0.005)	Loss 8.6518 (10.2166)	num of Positive tensor([ 11,   0,   0,  64,  43,   0, 115,   0,   0,  39,  95,  49],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:20:54,483] Iteration: [390/2091]	Batch Time 0.487 (0.510)	Data Time 0.000 (0.005)	Loss 7.4950 (10.1722)	num of Positive tensor([ 0,  0, 41, 46,  0,  0,  4,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:20:59,387] Iteration: [400/2091]	Batch Time 0.486 (0.510)	Data Time 0.000 (0.005)	Loss 8.5201 (10.1218)	num of Positive tensor([88, 22,  0, 66,  0,  0,  0,  0,  0, 33,  0, 16], device='cuda:0')	
+[INFO] [2021-12-15 07:21:04,285] Iteration: [410/2091]	Batch Time 0.488 (0.509)	Data Time 0.000 (0.005)	Loss 7.9058 (10.0774)	num of Positive tensor([  0,   0,   0,  33,  48,   0,  23,  48,  47,   0,   0, 103],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:21:09,202] Iteration: [420/2091]	Batch Time 0.494 (0.509)	Data Time 0.000 (0.005)	Loss 7.6340 (10.0301)	num of Positive tensor([ 51,   0,  20,   0,   0,   0,   0, 476,   0,  48,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:21:14,093] Iteration: [430/2091]	Batch Time 0.488 (0.508)	Data Time 0.000 (0.004)	Loss 9.0944 (9.9876)	num of Positive tensor([31,  0,  0,  0,  0,  0,  0,  9,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:21:18,978] Iteration: [440/2091]	Batch Time 0.487 (0.508)	Data Time 0.000 (0.004)	Loss 8.6496 (9.9540)	num of Positive tensor([ 0,  2,  0,  0, 17, 50,  0,  0,  0, 24,  0, 42], device='cuda:0')	
+[INFO] [2021-12-15 07:21:23,875] Iteration: [450/2091]	Batch Time 0.497 (0.508)	Data Time 0.000 (0.004)	Loss 8.5086 (9.9096)	num of Positive tensor([ 19,  97,   2,  29, 129,   0,   0,  58,  51,   0,  16,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:21:28,795] Iteration: [460/2091]	Batch Time 0.487 (0.507)	Data Time 0.000 (0.004)	Loss 8.1080 (9.8652)	num of Positive tensor([ 48,   0,   0,   0,  61,   0,   0, 117,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:21:33,718] Iteration: [470/2091]	Batch Time 0.489 (0.507)	Data Time 0.000 (0.004)	Loss 7.8409 (9.8359)	num of Positive tensor([  0,   0, 148,  55,   0,   0,   0, 193,   0,   1,  14,   4],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:21:38,633] Iteration: [480/2091]	Batch Time 0.487 (0.507)	Data Time 0.000 (0.004)	Loss 8.3548 (9.8002)	num of Positive tensor([ 0,  2,  0, 62,  0,  0,  0,  0,  0, 15,  2,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:21:43,520] Iteration: [490/2091]	Batch Time 0.503 (0.506)	Data Time 0.000 (0.004)	Loss 9.0336 (9.7678)	num of Positive tensor([ 0,  0,  4,  0,  0,  0,  0,  0,  0, 24, 20,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:21:48,426] Iteration: [500/2091]	Batch Time 0.488 (0.506)	Data Time 0.000 (0.004)	Loss 8.3094 (9.7386)	num of Positive tensor([ 30,   0,  46,   0,   8, 146,   0,   0,   0,   0,   7,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:21:53,297] Iteration: [510/2091]	Batch Time 0.488 (0.506)	Data Time 0.000 (0.004)	Loss 7.5092 (9.7070)	num of Positive tensor([ 28,  55,   0, 113,   0,  69,   0, 136,   0,  48,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:21:58,198] Iteration: [520/2091]	Batch Time 0.487 (0.505)	Data Time 0.000 (0.004)	Loss 8.3926 (9.6787)	num of Positive tensor([  0,   0,  73, 113,   0, 116,  69,   0,  60, 100,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:03,100] Iteration: [530/2091]	Batch Time 0.491 (0.505)	Data Time 0.000 (0.004)	Loss 9.5987 (9.6550)	num of Positive tensor([ 58,   0,   0,  12,   0,   0, 187,   9,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:08,013] Iteration: [540/2091]	Batch Time 0.492 (0.505)	Data Time 0.000 (0.004)	Loss 7.6778 (9.6213)	num of Positive tensor([ 11,   0,   0,   0,   0,  10,   0,  21, 105,   0,   0,   8],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:12,930] Iteration: [550/2091]	Batch Time 0.491 (0.505)	Data Time 0.000 (0.004)	Loss 7.4368 (9.5950)	num of Positive tensor([  4,  36,   0, 107,  31,   0,   0,   0,   0,   5,   0,  14],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:17,832] Iteration: [560/2091]	Batch Time 0.489 (0.504)	Data Time 0.000 (0.004)	Loss 7.8053 (9.5680)	num of Positive tensor([  0,   3,  15, 101,   0,   4, 126,   0,   0,   0,  72,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:22,734] Iteration: [570/2091]	Batch Time 0.485 (0.504)	Data Time 0.000 (0.003)	Loss 7.8234 (9.5432)	num of Positive tensor([101, 179,   0,  23, 200,  31, 101,   0,  60,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:27,633] Iteration: [580/2091]	Batch Time 0.488 (0.504)	Data Time 0.000 (0.003)	Loss 8.4306 (9.5148)	num of Positive tensor([  0, 162,   0,   0,   0,   0,   2,   0,  17,   2,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:32,545] Iteration: [590/2091]	Batch Time 0.487 (0.504)	Data Time 0.000 (0.003)	Loss 7.5561 (9.4887)	num of Positive tensor([ 97,  67,  16,   0,   0,   2,   0,   0,  95,   1,   0, 134],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:37,466] Iteration: [600/2091]	Batch Time 0.495 (0.503)	Data Time 0.000 (0.003)	Loss 8.7502 (9.4674)	num of Positive tensor([ 44,   0, 119,   0,   0,   0,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:42,365] Iteration: [610/2091]	Batch Time 0.490 (0.503)	Data Time 0.000 (0.003)	Loss 7.5760 (9.4424)	num of Positive tensor([208,  86,  60, 229,  76,   0,  64,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:47,272] Iteration: [620/2091]	Batch Time 0.490 (0.503)	Data Time 0.000 (0.003)	Loss 7.1256 (9.4155)	num of Positive tensor([ 87,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 226],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:52,176] Iteration: [630/2091]	Batch Time 0.491 (0.503)	Data Time 0.000 (0.003)	Loss 7.7211 (9.3910)	num of Positive tensor([  0,   0,   0,   0,   0, 100,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:22:57,101] Iteration: [640/2091]	Batch Time 0.491 (0.503)	Data Time 0.000 (0.003)	Loss 7.3239 (9.3652)	num of Positive tensor([  0,   0,   0,   0, 183,   0,  98,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:23:02,001] Iteration: [650/2091]	Batch Time 0.486 (0.502)	Data Time 0.000 (0.003)	Loss 8.4382 (9.3419)	num of Positive tensor([27,  0, 76, 74, 77,  0,  0,  0,  0, 62,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:23:06,929] Iteration: [660/2091]	Batch Time 0.491 (0.502)	Data Time 0.000 (0.003)	Loss 8.3520 (9.3216)	num of Positive tensor([ 20,  24,   0,  17,   0,  73,   0,  50, 125,   0,  62,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:23:11,852] Iteration: [670/2091]	Batch Time 0.488 (0.502)	Data Time 0.000 (0.003)	Loss 9.2649 (9.3047)	num of Positive tensor([  0,  50,   0,  68, 110,  93,   0,   0,  16,   0,   0,  25],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:23:16,730] Iteration: [680/2091]	Batch Time 0.484 (0.502)	Data Time 0.000 (0.003)	Loss 7.4271 (9.2837)	num of Positive tensor([106,   0,  56,   0,   0,   0,   0,   0,  80,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:23:21,622] Iteration: [690/2091]	Batch Time 0.487 (0.502)	Data Time 0.000 (0.003)	Loss 7.2583 (9.2639)	num of Positive tensor([ 0,  0,  0,  0,  0, 51,  0,  0, 94, 15,  0,  8], device='cuda:0')	
+[INFO] [2021-12-15 07:23:26,525] Iteration: [700/2091]	Batch Time 0.492 (0.502)	Data Time 0.000 (0.003)	Loss 7.0769 (9.2450)	num of Positive tensor([30,  0,  8, 18,  0,  0,  0,  0, 50, 93,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:23:31,460] Iteration: [710/2091]	Batch Time 0.492 (0.501)	Data Time 0.000 (0.003)	Loss 7.7085 (9.2263)	num of Positive tensor([  0, 281,   0,  54,   0,   0,   0,   0,   0,  71,  21,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:23:36,384] Iteration: [720/2091]	Batch Time 0.488 (0.501)	Data Time 0.000 (0.003)	Loss 6.9667 (9.2097)	num of Positive tensor([ 0,  0,  0, 74,  0, 80,  0,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:23:41,315] Iteration: [730/2091]	Batch Time 0.490 (0.501)	Data Time 0.000 (0.003)	Loss 7.3698 (9.1910)	num of Positive tensor([  0,   0,   0,  19,   0,   0,   0,   0,   0, 165,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:23:46,226] Iteration: [740/2091]	Batch Time 0.490 (0.501)	Data Time 0.000 (0.003)	Loss 6.7350 (9.1738)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   8,  18,  50, 207,  18,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:23:51,130] Iteration: [750/2091]	Batch Time 0.487 (0.501)	Data Time 0.000 (0.003)	Loss 7.5378 (9.1566)	num of Positive tensor([  0,   0,   0,   0,   0,   0,  49,   0,   0, 156,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:23:56,038] Iteration: [760/2091]	Batch Time 0.487 (0.501)	Data Time 0.000 (0.003)	Loss 7.4585 (9.1371)	num of Positive tensor([  0,   0,  29,   0,   0,  61, 131,   0,  10,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:00,943] Iteration: [770/2091]	Batch Time 0.489 (0.501)	Data Time 0.000 (0.003)	Loss 8.0505 (9.1210)	num of Positive tensor([ 38,   0,   0,   0,   0,  82, 146,  71,   0,   0,  44,  91],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:05,830] Iteration: [780/2091]	Batch Time 0.488 (0.500)	Data Time 0.000 (0.003)	Loss 8.0903 (9.1056)	num of Positive tensor([  0,   0,   0,   0,   0,   0, 102,   0,  49, 101,   0,  38],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:10,732] Iteration: [790/2091]	Batch Time 0.488 (0.500)	Data Time 0.000 (0.003)	Loss 7.7092 (9.0932)	num of Positive tensor([26, 45, 47, 76,  0, 41, 28,  0, 76,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:24:15,631] Iteration: [800/2091]	Batch Time 0.491 (0.500)	Data Time 0.000 (0.003)	Loss 7.7784 (9.0757)	num of Positive tensor([  0,  95,   2, 130,   0,   0,  39,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:20,608] Iteration: [810/2091]	Batch Time 0.489 (0.500)	Data Time 0.000 (0.003)	Loss 7.3086 (9.0556)	num of Positive tensor([  0,  26,   0,   0,   0, 139,   0,   0,   0,   0,   0,  71],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:25,501] Iteration: [820/2091]	Batch Time 0.487 (0.500)	Data Time 0.000 (0.002)	Loss 7.4295 (9.0411)	num of Positive tensor([  0,   2, 151,   0,   0,  52,   0,  35,   0,   0,   0,  22],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:30,400] Iteration: [830/2091]	Batch Time 0.492 (0.500)	Data Time 0.000 (0.002)	Loss 9.1087 (9.0274)	num of Positive tensor([  0, 173,   0,  49,  37,   0,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:35,301] Iteration: [840/2091]	Batch Time 0.490 (0.500)	Data Time 0.000 (0.002)	Loss 8.1047 (9.0133)	num of Positive tensor([ 35,   0,   0,   0,   0,   2,   0, 119,  86,   2,   5,   9],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:40,211] Iteration: [850/2091]	Batch Time 0.490 (0.500)	Data Time 0.000 (0.002)	Loss 7.7788 (8.9950)	num of Positive tensor([ 0,  0, 50,  0,  0,  5, 24,  0,  8,  2,  0, 10], device='cuda:0')	
+[INFO] [2021-12-15 07:24:45,105] Iteration: [860/2091]	Batch Time 0.492 (0.500)	Data Time 0.000 (0.002)	Loss 7.0893 (8.9804)	num of Positive tensor([ 76,  58,  22,   0,   0,   0, 252,   2, 125,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:49,997] Iteration: [870/2091]	Batch Time 0.488 (0.499)	Data Time 0.000 (0.002)	Loss 7.7036 (8.9675)	num of Positive tensor([ 75,  28,   0,  20,   0,   0, 159,  76,   0,   0,  52,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:24:54,909] Iteration: [880/2091]	Batch Time 0.509 (0.499)	Data Time 0.000 (0.002)	Loss 8.0554 (8.9548)	num of Positive tensor([ 0, 54,  0,  0,  0,  2,  0,  0, 66,  0, 50,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:24:59,817] Iteration: [890/2091]	Batch Time 0.498 (0.499)	Data Time 0.000 (0.002)	Loss 7.3211 (8.9407)	num of Positive tensor([  0,  50,   0,  63, 119,   0,  88,   0,  72,  42,   0,  79],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:04,760] Iteration: [900/2091]	Batch Time 0.488 (0.499)	Data Time 0.000 (0.002)	Loss 7.1555 (8.9254)	num of Positive tensor([  0, 105,   0, 169, 150,  46,   0, 141,  86,  27,   0,  44],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:09,683] Iteration: [910/2091]	Batch Time 0.505 (0.499)	Data Time 0.000 (0.002)	Loss 7.3810 (8.9078)	num of Positive tensor([ 76,  11,  37, 126,   0,  79,  22,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:14,594] Iteration: [920/2091]	Batch Time 0.491 (0.499)	Data Time 0.000 (0.002)	Loss 7.7742 (8.8961)	num of Positive tensor([ 0,  0,  0,  0, 24,  8, 35,  0,  7,  0, 15,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:25:19,507] Iteration: [930/2091]	Batch Time 0.491 (0.499)	Data Time 0.000 (0.002)	Loss 7.3066 (8.8852)	num of Positive tensor([ 68,   1,  32,   0,   0,   0,   6,   0,   0,   0,   0, 289],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:24,418] Iteration: [940/2091]	Batch Time 0.487 (0.499)	Data Time 0.000 (0.002)	Loss 8.5893 (8.8766)	num of Positive tensor([28,  2,  0,  9, 80,  0,  0, 22, 53,  0, 22,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:25:29,298] Iteration: [950/2091]	Batch Time 0.490 (0.499)	Data Time 0.000 (0.002)	Loss 7.2214 (8.8657)	num of Positive tensor([  3,   0,  33, 113,   0,  12,   0,   0,   0, 210,   0,  31],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:34,220] Iteration: [960/2091]	Batch Time 0.488 (0.499)	Data Time 0.000 (0.002)	Loss 8.0514 (8.8521)	num of Positive tensor([ 59,   0,   0,  96,   0,  82,   6,  40,   0, 261,   0,  71],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:39,083] Iteration: [970/2091]	Batch Time 0.484 (0.499)	Data Time 0.000 (0.002)	Loss 7.4100 (8.8412)	num of Positive tensor([146,   0,   0,   2,   0,   0,   0,  44,  47, 145,   0,   8],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:43,964] Iteration: [980/2091]	Batch Time 0.486 (0.498)	Data Time 0.000 (0.002)	Loss 8.7009 (8.8309)	num of Positive tensor([  0,   0, 101,   0,   8,   0,  87, 101,  11,   4,  61,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:48,839] Iteration: [990/2091]	Batch Time 0.487 (0.498)	Data Time 0.000 (0.002)	Loss 6.8765 (8.8197)	num of Positive tensor([139,  47, 309,   0,   0,   0,   0,  20,  15,  29,   0,  28],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:53,738] Iteration: [1000/2091]	Batch Time 0.490 (0.498)	Data Time 0.000 (0.002)	Loss 7.4658 (8.8065)	num of Positive tensor([  0,   0,   0,   0,  12,   0, 143,   0,   0,   2,  50,  92],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:25:58,670] Iteration: [1010/2091]	Batch Time 0.507 (0.498)	Data Time 0.000 (0.002)	Loss 7.4268 (8.7936)	num of Positive tensor([ 0,  0,  0, 84,  0,  2,  0, 21,  0,  0,  0, 84], device='cuda:0')	
+[INFO] [2021-12-15 07:26:03,584] Iteration: [1020/2091]	Batch Time 0.489 (0.498)	Data Time 0.000 (0.002)	Loss 6.3093 (8.7807)	num of Positive tensor([  0,   0,   0,  57,   1,  94,   0,   0, 105,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:08,499] Iteration: [1030/2091]	Batch Time 0.490 (0.498)	Data Time 0.000 (0.002)	Loss 8.7570 (8.7706)	num of Positive tensor([  0,   0,  61,   0,  26, 184,  22,   0,  80,   0,  23,  36],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:13,392] Iteration: [1040/2091]	Batch Time 0.489 (0.498)	Data Time 0.000 (0.002)	Loss 7.1813 (8.7574)	num of Positive tensor([ 35,  52, 152,  14,   0,  11,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:18,313] Iteration: [1050/2091]	Batch Time 0.509 (0.498)	Data Time 0.000 (0.002)	Loss 7.4729 (8.7492)	num of Positive tensor([  0,   0,   0, 206,   0, 112,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:23,228] Iteration: [1060/2091]	Batch Time 0.491 (0.498)	Data Time 0.000 (0.002)	Loss 7.4367 (8.7382)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   0,   0, 362,   2,   0,  96],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:28,124] Iteration: [1070/2091]	Batch Time 0.512 (0.498)	Data Time 0.000 (0.002)	Loss 6.7898 (8.7258)	num of Positive tensor([  0, 116,   0, 106, 187,   0,   0, 179, 155,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:33,029] Iteration: [1080/2091]	Batch Time 0.493 (0.498)	Data Time 0.000 (0.002)	Loss 7.3438 (8.7123)	num of Positive tensor([12,  0, 91, 74,  2,  0,  0,  2, 20, 19, 14, 91], device='cuda:0')	
+[INFO] [2021-12-15 07:26:37,932] Iteration: [1090/2091]	Batch Time 0.491 (0.498)	Data Time 0.000 (0.002)	Loss 7.8478 (8.7009)	num of Positive tensor([  0,   0,  38,  36,  27,  84,   0, 241,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:42,825] Iteration: [1100/2091]	Batch Time 0.491 (0.498)	Data Time 0.000 (0.002)	Loss 8.0759 (8.6891)	num of Positive tensor([  0, 139,   0,  13,   0,   0,  33, 141,   0,   0,   2,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:47,694] Iteration: [1110/2091]	Batch Time 0.482 (0.498)	Data Time 0.000 (0.002)	Loss 9.8143 (8.6819)	num of Positive tensor([0, 2, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0], device='cuda:0')	
+[INFO] [2021-12-15 07:26:52,572] Iteration: [1120/2091]	Batch Time 0.485 (0.497)	Data Time 0.000 (0.002)	Loss 7.5761 (8.6713)	num of Positive tensor([139,   0,   0,  56,   0,   0,  18,   0,  52,   0,   0, 127],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:26:57,482] Iteration: [1130/2091]	Batch Time 0.489 (0.497)	Data Time 0.000 (0.002)	Loss 7.9824 (8.6620)	num of Positive tensor([  0, 107,   2, 119,   0,  44,  59,   0,   0,   0,  51,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:27:02,369] Iteration: [1140/2091]	Batch Time 0.490 (0.497)	Data Time 0.000 (0.002)	Loss 8.0549 (8.6536)	num of Positive tensor([ 0,  0,  0,  0, 38, 49,  7,  0, 27, 58,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:27:07,281] Iteration: [1150/2091]	Batch Time 0.489 (0.497)	Data Time 0.000 (0.002)	Loss 6.9756 (8.6449)	num of Positive tensor([  0,   0,   0,  55,  36,   0, 192,   0,   0,   0,  40,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:27:12,201] Iteration: [1160/2091]	Batch Time 0.489 (0.497)	Data Time 0.000 (0.002)	Loss 8.1485 (8.6388)	num of Positive tensor([76, 49,  0, 92,  0,  0,  0, 47,  0, 63,  6,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:27:17,092] Iteration: [1170/2091]	Batch Time 0.496 (0.497)	Data Time 0.000 (0.002)	Loss 6.9489 (8.6298)	num of Positive tensor([  0,  67,   0,  11, 168,   0,   0,   0,   0,   0,  86,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:27:21,983] Iteration: [1180/2091]	Batch Time 0.485 (0.497)	Data Time 0.000 (0.002)	Loss 6.8069 (8.6186)	num of Positive tensor([ 0,  0, 93, 28,  0,  0,  0,  0,  0,  0,  0,  1], device='cuda:0')	
+[INFO] [2021-12-15 07:27:26,868] Iteration: [1190/2091]	Batch Time 0.503 (0.497)	Data Time 0.000 (0.002)	Loss 6.8826 (8.6080)	num of Positive tensor([  0,   0,   0, 164,   0,   0,   0,   7,  65,   0, 137,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:27:31,753] Iteration: [1200/2091]	Batch Time 0.488 (0.497)	Data Time 0.000 (0.002)	Loss 7.9551 (8.6025)	num of Positive tensor([ 49,  79,  20,  32,  75,   0,   0,   0,  60,   0, 113,  64],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:27:36,636] Iteration: [1210/2091]	Batch Time 0.486 (0.497)	Data Time 0.000 (0.002)	Loss 7.9131 (8.5935)	num of Positive tensor([ 0, 12,  0,  0,  0, 25,  0,  0, 40,  0,  0,  2], device='cuda:0')	
+[INFO] [2021-12-15 07:27:41,563] Iteration: [1220/2091]	Batch Time 0.487 (0.497)	Data Time 0.000 (0.002)	Loss 7.6009 (8.5852)	num of Positive tensor([ 75, 149, 111,   2, 200,   0,   0,   2,   0,   0,   6,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:27:46,491] Iteration: [1230/2091]	Batch Time 0.490 (0.497)	Data Time 0.000 (0.002)	Loss 7.5803 (8.5777)	num of Positive tensor([  0,   0,   2,   0,   4,   0,   0,   0,  52,   0, 213,  29],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:27:51,370] Iteration: [1240/2091]	Batch Time 0.487 (0.497)	Data Time 0.000 (0.002)	Loss 6.5942 (8.5758)	num of Positive tensor([ 32, 316,   0,   0,   0,   0, 106,   0,   0,   0,   0, 311],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:27:56,267] Iteration: [1250/2091]	Batch Time 0.497 (0.497)	Data Time 0.000 (0.002)	Loss 7.2189 (8.5697)	num of Positive tensor([  0,   0, 118,   0, 156,   0,   0, 138,   0,  26,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:01,194] Iteration: [1260/2091]	Batch Time 0.487 (0.497)	Data Time 0.000 (0.002)	Loss 7.6616 (8.5638)	num of Positive tensor([142,   0,   0,   0,   0,   0,   0,   0,   0,   2,   0, 106],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:06,100] Iteration: [1270/2091]	Batch Time 0.490 (0.497)	Data Time 0.000 (0.002)	Loss 6.9585 (8.5549)	num of Positive tensor([ 14,  50, 105,   4,   0,   0,  87,  13,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:11,013] Iteration: [1280/2091]	Batch Time 0.486 (0.497)	Data Time 0.000 (0.002)	Loss 6.7104 (8.5470)	num of Positive tensor([  0, 143,   0,  47,  32,   0,   0,  27,   9,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:15,906] Iteration: [1290/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 6.7756 (8.5386)	num of Positive tensor([ 67,   0,  92,  16,   0, 208,   0,  63,  13,  87,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:20,822] Iteration: [1300/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 7.4465 (8.5308)	num of Positive tensor([ 65,   0,   0,   0, 198,   0,   0,   0,  36,  75,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:25,734] Iteration: [1310/2091]	Batch Time 0.491 (0.496)	Data Time 0.000 (0.002)	Loss 8.0193 (8.5210)	num of Positive tensor([  0,  32, 128,   0,   0,   2,  93,   0,   9,  45,  26,  15],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:30,658] Iteration: [1320/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 6.9345 (8.5147)	num of Positive tensor([  9,   0,   7, 212, 225,   0,   0,  34,  92, 142,   0,  52],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:35,569] Iteration: [1330/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 7.2872 (8.5038)	num of Positive tensor([213,   0,   0,   0,  71,   0,   0,  51, 109,   0,  57,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:40,471] Iteration: [1340/2091]	Batch Time 0.489 (0.496)	Data Time 0.000 (0.002)	Loss 7.5824 (8.4899)	num of Positive tensor([  0,   0,   0,  69,  78, 117,  74,  76,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:45,353] Iteration: [1350/2091]	Batch Time 0.486 (0.496)	Data Time 0.000 (0.002)	Loss 8.5527 (8.4827)	num of Positive tensor([ 56,   0,   0,  31,   0,   4,  60,  30,   0, 120,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:28:50,251] Iteration: [1360/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 8.8214 (8.4757)	num of Positive tensor([ 0, 90,  0,  0,  0,  0,  0,  0,  0, 43, 54,  2], device='cuda:0')	
+[INFO] [2021-12-15 07:28:55,156] Iteration: [1370/2091]	Batch Time 0.489 (0.496)	Data Time 0.000 (0.002)	Loss 8.0696 (8.4695)	num of Positive tensor([ 0,  0, 44,  0,  0,  9,  0,  0,  0,  0,  8, 34], device='cuda:0')	
+[INFO] [2021-12-15 07:29:00,048] Iteration: [1380/2091]	Batch Time 0.484 (0.496)	Data Time 0.000 (0.002)	Loss 7.5178 (8.4610)	num of Positive tensor([ 0,  0, 33,  3,  0, 43, 61, 31,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:29:04,944] Iteration: [1390/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 6.7847 (8.4537)	num of Positive tensor([  0, 363,   7,   0,  89,   0,   0,   0,   0,   0,   8,  39],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:29:09,836] Iteration: [1400/2091]	Batch Time 0.489 (0.496)	Data Time 0.000 (0.002)	Loss 6.7066 (8.4441)	num of Positive tensor([  8,   0,  42,   0,   0, 140,   0,   0,   0,  12,   0, 240],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:29:14,754] Iteration: [1410/2091]	Batch Time 0.507 (0.496)	Data Time 0.000 (0.002)	Loss 7.6935 (8.4371)	num of Positive tensor([ 69,   0,   0,   0, 169,   4,   0,   0,  87,  40,   0,   2],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:29:19,670] Iteration: [1420/2091]	Batch Time 0.493 (0.496)	Data Time 0.000 (0.002)	Loss 7.5773 (8.4302)	num of Positive tensor([ 0,  0,  0, 77,  0,  1,  2,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:29:24,551] Iteration: [1430/2091]	Batch Time 0.486 (0.496)	Data Time 0.000 (0.002)	Loss 7.4298 (8.4221)	num of Positive tensor([  0,   0,   2, 111,   3,   0,   0,  44,   0,  44,   0,  21],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:29:29,441] Iteration: [1440/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.002)	Loss 7.6847 (8.4152)	num of Positive tensor([ 17, 146,  85,  55,  78,   0,   0,  89,   0,  37,   0,  37],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:29:34,359] Iteration: [1450/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.002)	Loss 7.9628 (8.4074)	num of Positive tensor([ 0,  0,  0, 88, 10,  0,  0,  0,  0,  9,  4,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:29:39,277] Iteration: [1460/2091]	Batch Time 0.484 (0.496)	Data Time 0.000 (0.002)	Loss 7.3046 (8.4005)	num of Positive tensor([ 5, 82,  0,  0,  0,  0,  0,  2, 30,  0,  0,  2], device='cuda:0')	
+[INFO] [2021-12-15 07:29:44,183] Iteration: [1470/2091]	Batch Time 0.485 (0.496)	Data Time 0.000 (0.002)	Loss 7.9767 (8.3937)	num of Positive tensor([26,  0, 46, 95,  0,  0, 17,  0, 16,  4,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:29:49,136] Iteration: [1480/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.002)	Loss 7.6713 (8.3861)	num of Positive tensor([  0,   0,  18, 100,  52,   0, 103,  99,  16,   0,   0,   1],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:29:54,041] Iteration: [1490/2091]	Batch Time 0.493 (0.496)	Data Time 0.000 (0.001)	Loss 7.0754 (8.3800)	num of Positive tensor([31,  0,  0, 28, 22,  0, 46, 99,  0, 10,  0, 46], device='cuda:0')	
+[INFO] [2021-12-15 07:29:58,949] Iteration: [1500/2091]	Batch Time 0.489 (0.496)	Data Time 0.000 (0.001)	Loss 8.0853 (8.3739)	num of Positive tensor([ 18,   0,  13,   0,   0,   0,   0,  10,   0,  32, 325,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:03,851] Iteration: [1510/2091]	Batch Time 0.489 (0.496)	Data Time 0.000 (0.001)	Loss 7.4159 (8.3676)	num of Positive tensor([74, 59,  0,  5, 68, 11,  0,  0,  0, 31,  0, 10], device='cuda:0')	
+[INFO] [2021-12-15 07:30:08,742] Iteration: [1520/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.001)	Loss 7.1695 (8.3621)	num of Positive tensor([157,  30,   0,   0,  25,   0,  55,   2,  20,   0,   0,  90],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:13,629] Iteration: [1530/2091]	Batch Time 0.491 (0.496)	Data Time 0.000 (0.001)	Loss 8.7669 (8.3593)	num of Positive tensor([ 1,  0, 42,  0, 96, 15, 71, 18,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:30:18,525] Iteration: [1540/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.001)	Loss 7.4086 (8.3529)	num of Positive tensor([  0,  14,   0,   0,   0,  48,   3, 262,   0,   7,  41,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:23,406] Iteration: [1550/2091]	Batch Time 0.493 (0.495)	Data Time 0.000 (0.001)	Loss 6.8635 (8.3455)	num of Positive tensor([  0,  46,   0,  94,   0,  30,   0,  59, 156,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:28,291] Iteration: [1560/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.001)	Loss 7.8899 (8.3403)	num of Positive tensor([ 0,  0, 66,  0,  0,  6,  7,  1,  0, 50,  0, 60], device='cuda:0')	
+[INFO] [2021-12-15 07:30:33,203] Iteration: [1570/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.001)	Loss 6.6317 (8.3371)	num of Positive tensor([  0, 141,   0,   0,   0, 254,   0,   0, 255,   2,   7,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:38,089] Iteration: [1580/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 7.9735 (8.3336)	num of Positive tensor([  0,   0,   2,  49,   0,   0,   0,   0, 166,   0,  56,  83],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:42,981] Iteration: [1590/2091]	Batch Time 0.484 (0.495)	Data Time 0.000 (0.001)	Loss 8.0249 (8.3258)	num of Positive tensor([  0,   0,  16,   0,   0,   0,  12, 176,   0,   0,   2,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:47,880] Iteration: [1600/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 6.4763 (8.3197)	num of Positive tensor([  0,   0,   0,   0,   0,  67,   0,  43, 112,  71,   0,  62],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:52,760] Iteration: [1610/2091]	Batch Time 0.486 (0.495)	Data Time 0.000 (0.001)	Loss 7.5596 (8.3128)	num of Positive tensor([  0,   0,  16,   0,  67,   0,   0,   0,  23,  52, 176,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:30:57,685] Iteration: [1620/2091]	Batch Time 0.485 (0.495)	Data Time 0.000 (0.001)	Loss 7.3705 (8.3038)	num of Positive tensor([  0,  70,  22,   0,   0, 108,  47,  14,   0,   0,   7,  26],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:31:02,561] Iteration: [1630/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.001)	Loss 7.0609 (8.2963)	num of Positive tensor([55,  0,  0,  0,  0, 42, 86, 48,  0, 16, 14,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:31:07,449] Iteration: [1640/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 8.1602 (8.2904)	num of Positive tensor([12,  0,  0,  0,  4,  0, 16,  0,  0,  3, 74,  2], device='cuda:0')	
+[INFO] [2021-12-15 07:31:12,406] Iteration: [1650/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.001)	Loss 8.1857 (8.2840)	num of Positive tensor([ 0,  0,  0, 24,  6, 20,  0,  0, 20,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:31:17,315] Iteration: [1660/2091]	Batch Time 0.484 (0.495)	Data Time 0.000 (0.001)	Loss 6.6690 (8.2803)	num of Positive tensor([ 82,   0,   0, 180,   0,   0,   0,   0,  84,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:31:22,230] Iteration: [1670/2091]	Batch Time 0.502 (0.495)	Data Time 0.000 (0.001)	Loss 7.2264 (8.2743)	num of Positive tensor([ 0,  0, 78,  0,  0,  0,  2, 30, 14, 62, 49,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:31:27,126] Iteration: [1680/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 6.4060 (8.2671)	num of Positive tensor([12,  0,  0,  0,  0,  0,  0, 53,  0, 73,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:31:32,047] Iteration: [1690/2091]	Batch Time 0.496 (0.495)	Data Time 0.000 (0.001)	Loss 7.6046 (8.2622)	num of Positive tensor([  0,  27, 192,   0,  33,   0,   0,   2,   2,  56, 241,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:31:36,960] Iteration: [1700/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 6.9852 (8.2567)	num of Positive tensor([ 53,   0,   0,   0, 220,   0,  20,   0,   0,   4,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:31:41,841] Iteration: [1710/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 6.4989 (8.2513)	num of Positive tensor([108,   0,   0,   2,   0, 354,  56,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:31:46,729] Iteration: [1720/2091]	Batch Time 0.501 (0.495)	Data Time 0.000 (0.001)	Loss 7.4203 (8.2451)	num of Positive tensor([34,  0,  0, 51,  0,  3,  0, 96,  0, 69, 23,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:31:51,633] Iteration: [1730/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 8.4492 (8.2411)	num of Positive tensor([ 0,  0,  0,  0,  0,  0, 20,  0,  0,  0,  2,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:31:56,533] Iteration: [1740/2091]	Batch Time 0.486 (0.495)	Data Time 0.000 (0.001)	Loss 8.1203 (8.2395)	num of Positive tensor([ 46,   0,   0, 151,   0,   0, 134,  41,  68,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:32:01,439] Iteration: [1750/2091]	Batch Time 0.510 (0.495)	Data Time 0.000 (0.001)	Loss 6.6260 (8.2352)	num of Positive tensor([ 30,   0, 244,  10,   6,  13,   0,   0,   9,   0,  53,  90],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:32:06,332] Iteration: [1760/2091]	Batch Time 0.489 (0.495)	Data Time 0.000 (0.001)	Loss 9.2805 (8.2287)	num of Positive tensor([ 0,  0,  0,  0,  0,  2, 56,  0,  0,  8,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:32:11,264] Iteration: [1770/2091]	Batch Time 0.506 (0.495)	Data Time 0.000 (0.001)	Loss 6.5213 (8.2228)	num of Positive tensor([  6,  17,   0,   0, 202,   0,   0,  54,   0,   0, 145,  40],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:32:16,185] Iteration: [1780/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 7.2988 (8.2164)	num of Positive tensor([  0, 135,   0,  65,  76,   0, 233,   0,  10,   0,   0, 163],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:32:21,072] Iteration: [1790/2091]	Batch Time 0.489 (0.495)	Data Time 0.000 (0.001)	Loss 6.3137 (8.2097)	num of Positive tensor([ 0, 57,  0, 63,  0,  0,  0, 57,  1,  0,  0, 93], device='cuda:0')	
+[INFO] [2021-12-15 07:32:25,967] Iteration: [1800/2091]	Batch Time 0.486 (0.495)	Data Time 0.000 (0.001)	Loss 7.1687 (8.2052)	num of Positive tensor([ 21,   0,   0,   0,   0,  80, 137,  53,  28,  37,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:32:30,877] Iteration: [1810/2091]	Batch Time 0.489 (0.495)	Data Time 0.000 (0.001)	Loss 8.5595 (8.2015)	num of Positive tensor([  0,   0,  10,  50,  40,   0,   0, 166,   0,  51,   0,  23],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:32:35,800] Iteration: [1820/2091]	Batch Time 0.505 (0.495)	Data Time 0.000 (0.001)	Loss 7.9715 (8.1989)	num of Positive tensor([ 55,  32,   0,   3,   0,   0,   0,   0, 179,   0,  36,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:32:40,672] Iteration: [1830/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 6.3631 (8.1902)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0, 68, 88,  0, 37,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:32:45,583] Iteration: [1840/2091]	Batch Time 0.486 (0.495)	Data Time 0.000 (0.001)	Loss 7.5176 (8.1838)	num of Positive tensor([ 0,  0, 25,  0,  0,  0,  0, 39,  0, 59, 21,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:32:50,458] Iteration: [1850/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.001)	Loss 6.6148 (8.1759)	num of Positive tensor([  0,  11,   0, 151,   0,   0,   0,  53,   0,  28,   0, 133],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:32:55,349] Iteration: [1860/2091]	Batch Time 0.486 (0.495)	Data Time 0.000 (0.001)	Loss 7.3267 (8.1727)	num of Positive tensor([ 52,   0,   0,  69,   0,   0,   0,  11, 195,  65,  73, 178],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:00,279] Iteration: [1870/2091]	Batch Time 0.506 (0.495)	Data Time 0.000 (0.001)	Loss 7.4422 (8.1657)	num of Positive tensor([ 38,   0,   0,  94,   0,   2, 111,   0,   0, 134,  52,  28],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:05,185] Iteration: [1880/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.001)	Loss 6.5544 (8.1608)	num of Positive tensor([ 0,  0,  0, 28,  0,  0,  0, 15, 78, 98,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:33:10,051] Iteration: [1890/2091]	Batch Time 0.482 (0.495)	Data Time 0.000 (0.001)	Loss 6.8715 (8.1583)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   0,  18,   0,   0,   0, 193],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:14,949] Iteration: [1900/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 7.4696 (8.1543)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 44], device='cuda:0')	
+[INFO] [2021-12-15 07:33:19,844] Iteration: [1910/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 7.2888 (8.1510)	num of Positive tensor([34,  0,  0,  0,  0,  0, 27,  0,  0,  0,  0, 33], device='cuda:0')	
+[INFO] [2021-12-15 07:33:24,741] Iteration: [1920/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 5.9274 (8.1443)	num of Positive tensor([ 0,  2,  0, 41, 15,  0,  0,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:33:29,657] Iteration: [1930/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 6.9514 (8.1392)	num of Positive tensor([  0, 161,   0, 122,   0,  46,   0,   0,  19,   0,   2,  35],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:34,582] Iteration: [1940/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.001)	Loss 6.4106 (8.1349)	num of Positive tensor([  0, 127,  27,   0,  17,   0,   0,   2,   0,   0,  33,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:39,533] Iteration: [1950/2091]	Batch Time 0.507 (0.494)	Data Time 0.000 (0.001)	Loss 6.7890 (8.1307)	num of Positive tensor([  0,   0,   0,   0,   0,  41,   0,   8,   0,   0, 152,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:44,417] Iteration: [1960/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 7.2423 (8.1265)	num of Positive tensor([  0,  36,   0,  13,   0,   0,   0,  10,  49, 268, 105,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:49,341] Iteration: [1970/2091]	Batch Time 0.504 (0.494)	Data Time 0.000 (0.001)	Loss 6.2780 (8.1220)	num of Positive tensor([301,   0,   0,   0, 105, 203,   1, 177,   0,   0,   0,  68],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:54,253] Iteration: [1980/2091]	Batch Time 0.491 (0.494)	Data Time 0.000 (0.001)	Loss 6.9219 (8.1165)	num of Positive tensor([254,   0,   0,   0,   0,  40,   0,   0,  19,   0,   0,  26],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:33:59,153] Iteration: [1990/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 7.5494 (8.1101)	num of Positive tensor([ 0,  0,  0,  0, 20,  0, 74, 25,  0, 33,  0, 36], device='cuda:0')	
+[INFO] [2021-12-15 07:34:04,081] Iteration: [2000/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.001)	Loss 6.7573 (8.1042)	num of Positive tensor([ 57, 234, 423,   0,   0,   0,  28,  10,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:34:08,987] Iteration: [2010/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 6.8012 (8.0989)	num of Positive tensor([  0,   0, 211,   0,   0,   0,   0,  35, 171,   0,   4,  45],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:34:13,917] Iteration: [2020/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.001)	Loss 7.4066 (8.0949)	num of Positive tensor([ 0,  0,  0, 59,  1,  0,  6,  2,  0,  0, 14,  2], device='cuda:0')	
+[INFO] [2021-12-15 07:34:18,837] Iteration: [2030/2091]	Batch Time 0.502 (0.494)	Data Time 0.000 (0.001)	Loss 6.2385 (8.0916)	num of Positive tensor([  0,   0,   5,   1,   0,  14,   0,  73,  42, 166,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:34:23,750] Iteration: [2040/2091]	Batch Time 0.491 (0.494)	Data Time 0.000 (0.001)	Loss 7.4147 (8.0885)	num of Positive tensor([58,  2,  0,  0,  0, 82,  0,  0,  0,  4, 24,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:34:28,659] Iteration: [2050/2091]	Batch Time 0.492 (0.494)	Data Time 0.000 (0.001)	Loss 9.1921 (8.0858)	num of Positive tensor([0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 0, 0], device='cuda:0')	
+[INFO] [2021-12-15 07:34:33,551] Iteration: [2060/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 7.0768 (8.0811)	num of Positive tensor([52, 60,  0,  0,  0,  0,  0, 55,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:34:38,444] Iteration: [2070/2091]	Batch Time 0.492 (0.494)	Data Time 0.000 (0.001)	Loss 7.4918 (8.0760)	num of Positive tensor([  0,   0,   0,   0,   0,   0, 107,   0,   0,   0,   0,  86],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:34:43,327] Iteration: [2080/2091]	Batch Time 0.484 (0.494)	Data Time 0.000 (0.001)	Loss 7.2150 (8.0724)	num of Positive tensor([38, 56,  0,  0,  0,  4,  0, 38,  0,  0, 49,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:34:53,960] Iteration: [2090/2091]	Batch Time 6.243 (0.497)	Data Time 0.000 (0.001)	Loss 6.6041 (8.0676)	num of Positive tensor([ 0,  0,  0, 59,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:34:54,667] #################### << Epoch   1 >> ####################
+[INFO] [2021-12-15 07:34:56,631] Iteration: [0/2091]	Batch Time 1.961 (1.961)	Data Time 1.399 (1.399)	Loss 7.0396 (7.0396)	num of Positive tensor([  0,   0,   0,  79,   0,  47, 139,  86,   0,   0,  20,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:35:01,568] Iteration: [10/2091]	Batch Time 0.490 (0.627)	Data Time 0.000 (0.128)	Loss 6.4563 (7.0357)	num of Positive tensor([  0,   0,   0,   0,   0, 315,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:35:06,477] Iteration: [20/2091]	Batch Time 0.489 (0.562)	Data Time 0.000 (0.067)	Loss 6.6976 (7.0272)	num of Positive tensor([ 33,   0,   0,   2,   0,   0,   0,   0,  31,   0, 146,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:35:11,406] Iteration: [30/2091]	Batch Time 0.505 (0.540)	Data Time 0.000 (0.045)	Loss 7.0575 (7.0001)	num of Positive tensor([  0,  46,  28,   0, 130,   0,   0,   0,   0,   0, 109,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:35:16,325] Iteration: [40/2091]	Batch Time 0.498 (0.528)	Data Time 0.000 (0.034)	Loss 7.4100 (7.0763)	num of Positive tensor([ 0, 21, 75,  0, 18, 30,  0,  0,  0,  0,  0, 22], device='cuda:0')	
+[INFO] [2021-12-15 07:35:21,286] Iteration: [50/2091]	Batch Time 0.501 (0.522)	Data Time 0.000 (0.028)	Loss 6.8068 (7.0769)	num of Positive tensor([30,  0,  0,  0,  0, 16,  0, 87, 14,  7,  0, 73], device='cuda:0')	
+[INFO] [2021-12-15 07:35:26,242] Iteration: [60/2091]	Batch Time 0.498 (0.518)	Data Time 0.000 (0.023)	Loss 8.8372 (7.1386)	num of Positive tensor([10,  0,  0, 82,  0,  9,  0,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:35:31,211] Iteration: [70/2091]	Batch Time 0.491 (0.515)	Data Time 0.000 (0.020)	Loss 7.4753 (7.2062)	num of Positive tensor([ 0, 22,  0, 50,  5, 56,  0,  0,  6,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:35:36,157] Iteration: [80/2091]	Batch Time 0.504 (0.512)	Data Time 0.000 (0.018)	Loss 6.8435 (7.1934)	num of Positive tensor([98,  0,  0,  0,  0,  8,  0,  0,  0,  0,  0, 16], device='cuda:0')	
+[INFO] [2021-12-15 07:35:41,131] Iteration: [90/2091]	Batch Time 0.506 (0.511)	Data Time 0.000 (0.016)	Loss 6.6148 (7.1775)	num of Positive tensor([  2,   0,   0,   0,  38, 168, 163,   0,   0,   0,  43, 249],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:35:46,067] Iteration: [100/2091]	Batch Time 0.488 (0.509)	Data Time 0.000 (0.014)	Loss 6.5072 (7.1795)	num of Positive tensor([  0,   0, 248,   0,   0,   0,  28,   0,   0,  72,   2,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:35:51,012] Iteration: [110/2091]	Batch Time 0.487 (0.508)	Data Time 0.000 (0.013)	Loss 5.4769 (7.1739)	num of Positive tensor([  0,   0,  54,   0,   0,   2,   0,   0,   0, 101,  59,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:35:55,978] Iteration: [120/2091]	Batch Time 0.512 (0.507)	Data Time 0.000 (0.012)	Loss 6.7169 (7.2012)	num of Positive tensor([  4, 168,   0,  48,   0,   3,   0,  22,  60,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:36:00,919] Iteration: [130/2091]	Batch Time 0.490 (0.506)	Data Time 0.000 (0.011)	Loss 7.0572 (7.2069)	num of Positive tensor([  0,   6,   0,  57,   0,  60,   0,   0, 329,  80,   0,   2],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:36:05,862] Iteration: [140/2091]	Batch Time 0.498 (0.505)	Data Time 0.000 (0.010)	Loss 7.4758 (7.2093)	num of Positive tensor([79,  0,  0, 70,  0, 62, 56, 52,  0, 51,  0, 53], device='cuda:0')	
+[INFO] [2021-12-15 07:36:10,792] Iteration: [150/2091]	Batch Time 0.491 (0.504)	Data Time 0.000 (0.010)	Loss 6.3998 (7.1603)	num of Positive tensor([ 21, 123,  85,  44,   0,  54,   0,   0,  46, 128,   0, 104],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:36:15,818] Iteration: [160/2091]	Batch Time 0.504 (0.504)	Data Time 0.000 (0.009)	Loss 6.7483 (7.1614)	num of Positive tensor([  0,   0,  78,   0,  42,   0,   0,   0, 178,  28,   9,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:36:20,752] Iteration: [170/2091]	Batch Time 0.491 (0.503)	Data Time 0.000 (0.008)	Loss 7.7200 (7.1572)	num of Positive tensor([ 0,  0,  0,  4,  2,  2, 26,  0, 11,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:36:25,708] Iteration: [180/2091]	Batch Time 0.500 (0.503)	Data Time 0.000 (0.008)	Loss 9.3849 (7.1515)	num of Positive tensor([ 0,  6,  7,  0, 70, 10,  0, 25,  0,  0,  8,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:36:30,656] Iteration: [190/2091]	Batch Time 0.497 (0.503)	Data Time 0.000 (0.008)	Loss 6.8554 (7.1463)	num of Positive tensor([  0, 102,   0, 144,  78,   0,   9,  55,   0,   0,  52,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:36:35,593] Iteration: [200/2091]	Batch Time 0.489 (0.502)	Data Time 0.000 (0.007)	Loss 7.2623 (7.1291)	num of Positive tensor([ 0,  0,  0,  0,  0,  0, 35,  4, 28,  6, 96,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:36:40,522] Iteration: [210/2091]	Batch Time 0.491 (0.502)	Data Time 0.000 (0.007)	Loss 6.7121 (7.1230)	num of Positive tensor([  4,  21,   0,  85, 163,   0,   0,   0,  40,  34,  60,  34],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:36:45,467] Iteration: [220/2091]	Batch Time 0.490 (0.501)	Data Time 0.000 (0.007)	Loss 6.4280 (7.1529)	num of Positive tensor([169,   0,   0,   0,  25,   0,   0,   2,   0,   5,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:36:50,393] Iteration: [230/2091]	Batch Time 0.488 (0.501)	Data Time 0.000 (0.006)	Loss 6.2152 (7.1555)	num of Positive tensor([ 53,   0,   0,   0,   0,   0, 123,   0,   0,   0,  13,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:36:55,361] Iteration: [240/2091]	Batch Time 0.488 (0.501)	Data Time 0.000 (0.006)	Loss 7.2031 (7.1519)	num of Positive tensor([ 86,   0, 141,   0,  91,  43,  30,   9,  22,   2,  46, 100],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:00,312] Iteration: [250/2091]	Batch Time 0.497 (0.501)	Data Time 0.000 (0.006)	Loss 7.8779 (7.1640)	num of Positive tensor([ 0, 44,  0,  0,  0,  0, 49, 14, 52,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:37:05,258] Iteration: [260/2091]	Batch Time 0.498 (0.500)	Data Time 0.000 (0.006)	Loss 7.2128 (7.1562)	num of Positive tensor([  0,  68,  83,   0,   0, 135,   5,   0,  42,   0,   0,  41],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:10,193] Iteration: [270/2091]	Batch Time 0.498 (0.500)	Data Time 0.000 (0.005)	Loss 6.7629 (7.1569)	num of Positive tensor([  9,   0,   0,   0,   0,   0, 107, 245,   0,   0,  13,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:15,090] Iteration: [280/2091]	Batch Time 0.488 (0.500)	Data Time 0.000 (0.005)	Loss 7.5637 (7.1541)	num of Positive tensor([ 0,  0,  0,  0,  0, 44,  0,  0,  0,  0,  0,  2], device='cuda:0')	
+[INFO] [2021-12-15 07:37:20,048] Iteration: [290/2091]	Batch Time 0.487 (0.500)	Data Time 0.000 (0.005)	Loss 7.6507 (7.1488)	num of Positive tensor([  0,   0,  53,   0, 243, 121,   0,  28,  37,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:25,005] Iteration: [300/2091]	Batch Time 0.499 (0.499)	Data Time 0.000 (0.005)	Loss 7.4797 (7.1500)	num of Positive tensor([190,   0,   0,  33, 320,   0,   0,   0,  11,   0,   0,  41],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:29,969] Iteration: [310/2091]	Batch Time 0.487 (0.499)	Data Time 0.000 (0.005)	Loss 6.6987 (7.1525)	num of Positive tensor([241,   0, 121,   0,  43,   0,   0,   0,  16,  17,  32,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:34,902] Iteration: [320/2091]	Batch Time 0.503 (0.499)	Data Time 0.000 (0.005)	Loss 6.7268 (7.1510)	num of Positive tensor([  9, 208,  28,   0, 110,   0,  46,   0,  80,  57, 200,  16],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:39,837] Iteration: [330/2091]	Batch Time 0.506 (0.499)	Data Time 0.000 (0.005)	Loss 7.1196 (7.1580)	num of Positive tensor([ 90,   0,   0,   0,   0,  21,   0, 107,   0,  34,   5,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:44,748] Iteration: [340/2091]	Batch Time 0.488 (0.499)	Data Time 0.000 (0.004)	Loss 8.6135 (7.1661)	num of Positive tensor([ 99,   0,   0,  32,   0,  39, 107,   0,   0,   0,   0,  15],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:49,687] Iteration: [350/2091]	Batch Time 0.494 (0.499)	Data Time 0.000 (0.004)	Loss 6.2093 (7.1601)	num of Positive tensor([  0,  37,   0,   0, 278,   0,  90,   4,   0,   0,   0,  78],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:54,610] Iteration: [360/2091]	Batch Time 0.487 (0.498)	Data Time 0.000 (0.004)	Loss 7.0038 (7.1553)	num of Positive tensor([115,   2,   0,   2,   0,  58,   0,  70,   4,   0,   0,  98],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:37:59,578] Iteration: [370/2091]	Batch Time 0.492 (0.498)	Data Time 0.000 (0.004)	Loss 8.3919 (7.1567)	num of Positive tensor([ 0,  0, 24,  1,  0, 33, 16,  4,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:38:04,496] Iteration: [380/2091]	Batch Time 0.486 (0.498)	Data Time 0.000 (0.004)	Loss 8.1355 (7.1586)	num of Positive tensor([  0,   8,   0,   7,   0,   0,   0,   0, 106,   0,   6,  81],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:38:09,466] Iteration: [390/2091]	Batch Time 0.507 (0.498)	Data Time 0.000 (0.004)	Loss 7.2903 (7.1551)	num of Positive tensor([108,   0,  43,   4,  77,  15,   0,   0,  11,  49,  76,  11],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:38:14,418] Iteration: [400/2091]	Batch Time 0.488 (0.498)	Data Time 0.000 (0.004)	Loss 7.6374 (7.1540)	num of Positive tensor([  0,   0,  16,   0,  30, 103,  65,   0,  83,  46,  48,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:38:19,356] Iteration: [410/2091]	Batch Time 0.506 (0.498)	Data Time 0.000 (0.004)	Loss 6.3183 (7.1531)	num of Positive tensor([ 0,  0, 39,  0,  0, 69,  0, 12, 31,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:38:24,296] Iteration: [420/2091]	Batch Time 0.497 (0.498)	Data Time 0.000 (0.004)	Loss 6.1791 (7.1399)	num of Positive tensor([102,   0,   0,  29,  36,  21,   0,   0,  76,  52,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:38:29,189] Iteration: [430/2091]	Batch Time 0.485 (0.498)	Data Time 0.000 (0.004)	Loss 6.8655 (7.1402)	num of Positive tensor([  0,   0,  60,   0,  57,   2,   0,   0,   0, 130, 105,  81],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:38:34,086] Iteration: [440/2091]	Batch Time 0.507 (0.498)	Data Time 0.000 (0.003)	Loss 7.4794 (7.1390)	num of Positive tensor([  0,  39,   0,   0, 162,  30,   0,  33,  45,   7,  30,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:38:39,035] Iteration: [450/2091]	Batch Time 0.485 (0.497)	Data Time 0.000 (0.003)	Loss 6.6449 (7.1368)	num of Positive tensor([  0, 171,   0,  47,   0,   0,   6,   0,   0,   0,   0, 127],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:38:43,977] Iteration: [460/2091]	Batch Time 0.488 (0.497)	Data Time 0.000 (0.003)	Loss 6.5776 (7.1402)	num of Positive tensor([  0,  87,   0,   0,  13,   7,   0,  58,   2, 206,  85,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:38:48,903] Iteration: [470/2091]	Batch Time 0.487 (0.497)	Data Time 0.000 (0.003)	Loss 7.6478 (7.1371)	num of Positive tensor([ 0, 15,  0, 58, 12, 13, 20,  0, 27, 35,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:38:53,842] Iteration: [480/2091]	Batch Time 0.490 (0.497)	Data Time 0.000 (0.003)	Loss 6.1327 (7.1366)	num of Positive tensor([ 0,  0,  0,  0,  0, 25,  0,  0,  0,  0, 62, 14], device='cuda:0')	
+[INFO] [2021-12-15 07:38:58,796] Iteration: [490/2091]	Batch Time 0.489 (0.497)	Data Time 0.000 (0.003)	Loss 7.1447 (7.1383)	num of Positive tensor([ 0, 24,  0,  0, 10,  0, 57, 47,  0,  4,  8, 45], device='cuda:0')	
+[INFO] [2021-12-15 07:39:03,750] Iteration: [500/2091]	Batch Time 0.487 (0.497)	Data Time 0.000 (0.003)	Loss 6.0479 (7.1267)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   0, 182,   0,   0, 100,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:08,711] Iteration: [510/2091]	Batch Time 0.505 (0.497)	Data Time 0.000 (0.003)	Loss 7.5701 (7.1270)	num of Positive tensor([ 0, 52, 51,  0, 92, 91, 57,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:39:13,652] Iteration: [520/2091]	Batch Time 0.502 (0.497)	Data Time 0.000 (0.003)	Loss 6.6609 (7.1262)	num of Positive tensor([  0, 197,   2,   0,   0, 288,   0,   0,   0,   0,  85,  70],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:18,558] Iteration: [530/2091]	Batch Time 0.503 (0.497)	Data Time 0.000 (0.003)	Loss 6.2359 (7.1178)	num of Positive tensor([ 0,  0, 53, 18, 59,  0, 62,  8,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:39:23,498] Iteration: [540/2091]	Batch Time 0.499 (0.497)	Data Time 0.000 (0.003)	Loss 6.8687 (7.1143)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   0,   0,  37, 114,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:28,452] Iteration: [550/2091]	Batch Time 0.506 (0.497)	Data Time 0.000 (0.003)	Loss 6.6827 (7.1176)	num of Positive tensor([ 55,   0,   0,   0, 340,   0,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:33,381] Iteration: [560/2091]	Batch Time 0.489 (0.497)	Data Time 0.000 (0.003)	Loss 6.9267 (7.1150)	num of Positive tensor([125,   0,   0,   0,   0,  46,   0,   0,  77,   0,   0, 126],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:38,334] Iteration: [570/2091]	Batch Time 0.503 (0.497)	Data Time 0.000 (0.003)	Loss 6.1769 (7.1078)	num of Positive tensor([  0,   0,  46,   0,   0,  11,  42,   7, 142,  31,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:43,233] Iteration: [580/2091]	Batch Time 0.492 (0.497)	Data Time 0.000 (0.003)	Loss 6.7593 (7.1047)	num of Positive tensor([  0,  77,   0,   0,   2,   0, 112,   0,  12,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:48,176] Iteration: [590/2091]	Batch Time 0.490 (0.497)	Data Time 0.000 (0.003)	Loss 8.4623 (7.1128)	num of Positive tensor([  0,   0, 108,   0,   0,   0,   2,  43,  53,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:53,123] Iteration: [600/2091]	Batch Time 0.489 (0.497)	Data Time 0.000 (0.003)	Loss 6.7010 (7.1119)	num of Positive tensor([  0,   0,   0,   0, 266,   0,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:39:58,073] Iteration: [610/2091]	Batch Time 0.489 (0.497)	Data Time 0.000 (0.003)	Loss 8.6494 (7.1162)	num of Positive tensor([11, 92,  0, 26,  0, 89,  0,  0,  0,  2,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:40:03,040] Iteration: [620/2091]	Batch Time 0.492 (0.497)	Data Time 0.000 (0.003)	Loss 7.0094 (7.1102)	num of Positive tensor([ 0,  0,  0,  0,  7, 34,  0, 52, 98, 75,  3,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:40:07,956] Iteration: [630/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.003)	Loss 8.3553 (7.1112)	num of Positive tensor([ 0,  0, 66, 18,  0,  0,  0,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:40:12,883] Iteration: [640/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.002)	Loss 6.5827 (7.1097)	num of Positive tensor([108,   8,   0,   0,  48,   0,   8, 207,   0, 180,  68,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:40:17,763] Iteration: [650/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 8.3691 (7.1104)	num of Positive tensor([65,  0,  0,  4,  0,  0,  0,  0, 45,  0, 97,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:40:22,701] Iteration: [660/2091]	Batch Time 0.506 (0.496)	Data Time 0.000 (0.002)	Loss 9.1683 (7.1160)	num of Positive tensor([ 0, 26,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1], device='cuda:0')	
+[INFO] [2021-12-15 07:40:27,672] Iteration: [670/2091]	Batch Time 0.492 (0.496)	Data Time 0.000 (0.002)	Loss 6.3686 (7.1177)	num of Positive tensor([  0, 314,  12,   0, 203,   0,   2,  10,   0,   0,  36,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:40:32,612] Iteration: [680/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 6.4233 (7.1209)	num of Positive tensor([171,   0,   0,   0,   0,   4,   0,   4,   0,   0,   0,  18],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:40:37,540] Iteration: [690/2091]	Batch Time 0.504 (0.496)	Data Time 0.000 (0.002)	Loss 8.2689 (7.1249)	num of Positive tensor([  0,   0,   4,   0,  51,  46, 105,   0,   0,   0,   0,  18],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:40:42,483] Iteration: [700/2091]	Batch Time 0.486 (0.496)	Data Time 0.000 (0.002)	Loss 8.7187 (7.1248)	num of Positive tensor([ 0,  0,  0,  2, 53,  0,  0,  0,  0,  0, 53, 18], device='cuda:0')	
+[INFO] [2021-12-15 07:40:47,380] Iteration: [710/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 8.4796 (7.1227)	num of Positive tensor([ 0, 50,  0,  2,  0,  0,  2, 10,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:40:52,307] Iteration: [720/2091]	Batch Time 0.486 (0.496)	Data Time 0.000 (0.002)	Loss 7.2398 (7.1214)	num of Positive tensor([35,  0, 71, 18, 19,  0,  0,  0, 48,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:40:57,222] Iteration: [730/2091]	Batch Time 0.485 (0.496)	Data Time 0.000 (0.002)	Loss 16.8641 (7.1357)	num of Positive tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], device='cuda:0')	
+[INFO] [2021-12-15 07:41:02,120] Iteration: [740/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 7.2935 (7.1321)	num of Positive tensor([116,  38, 100, 112,  10,  19,   0,   0,   0,   0,   0,  41],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:07,055] Iteration: [750/2091]	Batch Time 0.507 (0.496)	Data Time 0.000 (0.002)	Loss 7.7171 (7.1298)	num of Positive tensor([  0,   0,   0,   0,   0,   0,  74,  55,   0, 199,  47,  19],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:11,989] Iteration: [760/2091]	Batch Time 0.506 (0.496)	Data Time 0.000 (0.002)	Loss 7.3661 (7.1282)	num of Positive tensor([  0,  80,  78, 140,  99,   0,  36,   0,   0,   0, 243,  44],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:16,907] Iteration: [770/2091]	Batch Time 0.492 (0.496)	Data Time 0.000 (0.002)	Loss 7.6239 (7.1276)	num of Positive tensor([  0,  79,   0,   0,  28, 103,   0,   0,   0,   0,  11, 131],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:21,850] Iteration: [780/2091]	Batch Time 0.493 (0.496)	Data Time 0.000 (0.002)	Loss 6.3134 (7.1247)	num of Positive tensor([  0,  27,   0,   0,  48, 223,  63,  69,  67,   0,   0,  25],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:26,792] Iteration: [790/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.002)	Loss 9.5824 (7.1223)	num of Positive tensor([ 0, 22,  0,  0,  0,  0,  0,  0,  0,  0,  0, 46], device='cuda:0')	
+[INFO] [2021-12-15 07:41:31,745] Iteration: [800/2091]	Batch Time 0.508 (0.496)	Data Time 0.000 (0.002)	Loss 6.7314 (7.1185)	num of Positive tensor([  0,   0,  72,   0,   1,  70,   0,   0,  64,   0, 135,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:36,700] Iteration: [810/2091]	Batch Time 0.496 (0.496)	Data Time 0.000 (0.002)	Loss 7.1039 (7.1183)	num of Positive tensor([  0,   0,  32,   0,   0,  87,  39, 167, 185,   0, 250,  21],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:41,656] Iteration: [820/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.002)	Loss 6.8170 (7.1232)	num of Positive tensor([ 58, 168, 134,   0,   0,   0,   0,   0,   0,   0,   0,   8],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:46,593] Iteration: [830/2091]	Batch Time 0.493 (0.496)	Data Time 0.000 (0.002)	Loss 6.4037 (7.1183)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   0,  94,   0, 239,   0,   6],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:51,532] Iteration: [840/2091]	Batch Time 0.500 (0.496)	Data Time 0.000 (0.002)	Loss 6.2147 (7.1145)	num of Positive tensor([146,   0,   0,   0,   7,  73,   0,   0,  82,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:41:56,483] Iteration: [850/2091]	Batch Time 0.510 (0.496)	Data Time 0.000 (0.002)	Loss 7.7598 (7.1140)	num of Positive tensor([ 6, 27,  0,  0,  0,  0,  0,  0,  0,  6, 48,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:42:01,366] Iteration: [860/2091]	Batch Time 0.488 (0.496)	Data Time 0.000 (0.002)	Loss 9.0992 (7.1153)	num of Positive tensor([ 0,  0,  0, 61,  0,  0,  0,  0,  0, 35, 74,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:42:06,279] Iteration: [870/2091]	Batch Time 0.489 (0.496)	Data Time 0.000 (0.002)	Loss 5.9437 (7.1136)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 84, 76], device='cuda:0')	
+[INFO] [2021-12-15 07:42:11,210] Iteration: [880/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.002)	Loss 6.9727 (7.1115)	num of Positive tensor([ 38, 205,   0, 139,   0,   0,   0,  88, 158,   0,   0,  16],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:42:16,119] Iteration: [890/2091]	Batch Time 0.490 (0.495)	Data Time 0.000 (0.002)	Loss 8.8483 (7.1098)	num of Positive tensor([48,  0,  0, 50,  0, 28,  0,  2, 12,  2, 49,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:42:21,005] Iteration: [900/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.002)	Loss 6.5446 (7.1065)	num of Positive tensor([116,   0,   0,   0,   0,  18,   0,   0,  34, 150,  22, 155],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:42:25,949] Iteration: [910/2091]	Batch Time 0.501 (0.495)	Data Time 0.000 (0.002)	Loss 7.8175 (7.1080)	num of Positive tensor([176,   0,  15,   0,   0,   0,   0,   0,  86,  85, 119,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:42:30,899] Iteration: [920/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 7.4380 (7.1077)	num of Positive tensor([  0,   0,  34,   0,   0,   0,   0,   0,   0, 237,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:42:35,820] Iteration: [930/2091]	Batch Time 0.496 (0.495)	Data Time 0.000 (0.002)	Loss 6.5863 (7.1044)	num of Positive tensor([57,  8,  0,  0, 31,  0,  0,  1,  0,  0,  0,  2], device='cuda:0')	
+[INFO] [2021-12-15 07:42:40,751] Iteration: [940/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.002)	Loss 6.8420 (7.1027)	num of Positive tensor([ 32,  25,   0,   8, 130,   0, 100,   0,   1,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:42:45,691] Iteration: [950/2091]	Batch Time 0.503 (0.495)	Data Time 0.000 (0.002)	Loss 6.2028 (7.1004)	num of Positive tensor([ 0, 75,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:42:50,621] Iteration: [960/2091]	Batch Time 0.492 (0.495)	Data Time 0.000 (0.002)	Loss 7.3259 (7.0977)	num of Positive tensor([  0,   0,  50,  42,   0, 192, 312,   0,   6,   0, 113,  64],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:42:55,529] Iteration: [970/2091]	Batch Time 0.486 (0.495)	Data Time 0.000 (0.002)	Loss 6.5607 (7.0987)	num of Positive tensor([ 73,   0,  12,  59,   0,   0,   0,   0,   0,   4,  76, 124],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:00,433] Iteration: [980/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 6.4589 (7.0960)	num of Positive tensor([  0,   0,   0,  99,   0,   0,   0,   0, 113,   0,   0,  34],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:05,366] Iteration: [990/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.002)	Loss 7.0630 (7.0974)	num of Positive tensor([115,   0,   0,   0,   2, 187,   3,   6,  86,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:10,278] Iteration: [1000/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.002)	Loss 7.0279 (7.0980)	num of Positive tensor([  0,  11,   0,   0,  54,   2,   0,   0,   0,   2, 253,  52],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:15,193] Iteration: [1010/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 6.9396 (7.0949)	num of Positive tensor([ 0, 26,  0,  0, 27,  0, 16, 60,  0,  0, 32, 56], device='cuda:0')	
+[INFO] [2021-12-15 07:43:20,120] Iteration: [1020/2091]	Batch Time 0.492 (0.495)	Data Time 0.000 (0.002)	Loss 7.0548 (7.0918)	num of Positive tensor([  2,   0,   0,   6,  35,  62,  32,   0,   0,   0,   0, 111],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:25,031] Iteration: [1030/2091]	Batch Time 0.497 (0.495)	Data Time 0.000 (0.002)	Loss 7.5427 (7.0942)	num of Positive tensor([ 67,   0,  84,   0, 113,  80,   0,   0,   0,   0,  67,  14],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:29,961] Iteration: [1040/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 6.9390 (7.0934)	num of Positive tensor([24, 98,  0,  0, 68,  0,  5, 45,  5,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:43:34,880] Iteration: [1050/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 7.1507 (7.0903)	num of Positive tensor([134,   0, 143,   0,   0,   0, 101,  32,   1,  48,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:39,806] Iteration: [1060/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.002)	Loss 7.5320 (7.0925)	num of Positive tensor([  0,   0,   0,  42,   0,   0,   6,  34, 311, 100,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:44,697] Iteration: [1070/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 7.5696 (7.0900)	num of Positive tensor([  0,  29, 203,  16,  17,   0,   0,   0,   0, 135,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:49,595] Iteration: [1080/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.002)	Loss 6.9107 (7.0878)	num of Positive tensor([ 56, 124,  14,   0, 124,  72,   0,   0,  67,   0,  94,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:43:54,506] Iteration: [1090/2091]	Batch Time 0.496 (0.495)	Data Time 0.000 (0.002)	Loss 7.0511 (7.0867)	num of Positive tensor([ 2,  0, 49,  0,  0,  2, 28, 80,  0, 79, 38, 46], device='cuda:0')	
+[INFO] [2021-12-15 07:43:59,427] Iteration: [1100/2091]	Batch Time 0.489 (0.495)	Data Time 0.000 (0.002)	Loss 7.4798 (7.0884)	num of Positive tensor([22,  2, 17, 25,  0,  2, 27,  0,  0,  2,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:44:04,314] Iteration: [1110/2091]	Batch Time 0.501 (0.495)	Data Time 0.000 (0.002)	Loss 7.5423 (7.0851)	num of Positive tensor([130,   0,   0,   0,   0,   0,   0,  52,   0,   0,   0,  42],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:44:09,221] Iteration: [1120/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 6.6390 (7.0840)	num of Positive tensor([ 3, 20,  0,  0,  0,  0, 50, 40,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:44:14,129] Iteration: [1130/2091]	Batch Time 0.492 (0.495)	Data Time 0.000 (0.002)	Loss 6.9753 (7.0862)	num of Positive tensor([ 30,   0,  45, 138,   0,   0,   0,  37,  47,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:44:19,051] Iteration: [1140/2091]	Batch Time 0.501 (0.495)	Data Time 0.000 (0.002)	Loss 6.5463 (7.0863)	num of Positive tensor([  3,   0,   0,   0,   0,   0,   0,   0, 221, 177,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:44:23,968] Iteration: [1150/2091]	Batch Time 0.490 (0.495)	Data Time 0.000 (0.002)	Loss 6.2985 (7.0829)	num of Positive tensor([ 0,  0, 75, 16,  0,  0,  0,  0,  0,  0, 42,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:44:28,864] Iteration: [1160/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.002)	Loss 6.7192 (7.0774)	num of Positive tensor([85,  0,  0,  0, 68,  0, 98,  0,  4, 27,  0, 53], device='cuda:0')	
+[INFO] [2021-12-15 07:44:33,792] Iteration: [1170/2091]	Batch Time 0.500 (0.495)	Data Time 0.000 (0.001)	Loss 6.6387 (7.0742)	num of Positive tensor([  0,   0, 179,   0,  48, 125,   0,   0,  28,   0,  39,  56],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:44:38,715] Iteration: [1180/2091]	Batch Time 0.489 (0.495)	Data Time 0.000 (0.001)	Loss 6.4913 (7.0707)	num of Positive tensor([  0,  30,  83,   0,   0,   0,  16,  29,  86, 157,   0,  14],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:44:43,635] Iteration: [1190/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.001)	Loss 6.3763 (7.0679)	num of Positive tensor([  0,  47,   0,   0, 151,   9,   0,   0,  21, 250,  15,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:44:48,547] Iteration: [1200/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 8.8838 (7.0659)	num of Positive tensor([ 0,  0, 22,  0,  0,  7,  0,  0,  0, 19,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:44:53,471] Iteration: [1210/2091]	Batch Time 0.485 (0.494)	Data Time 0.000 (0.001)	Loss 7.2884 (7.0635)	num of Positive tensor([ 0, 80, 44, 58,  0,  0,  0,  0, 54, 25,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:44:58,386] Iteration: [1220/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 6.3095 (7.0594)	num of Positive tensor([  0,   0,   0,   5,   0,   0,  85,   0,   0, 119,   0,  37],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:45:03,297] Iteration: [1230/2091]	Batch Time 0.484 (0.494)	Data Time 0.000 (0.001)	Loss 7.5500 (7.0578)	num of Positive tensor([  0,  31,   0,   0,   0,   0, 109, 124,   0,  49,   2,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:45:08,217] Iteration: [1240/2091]	Batch Time 0.506 (0.494)	Data Time 0.000 (0.001)	Loss 6.7901 (7.0578)	num of Positive tensor([  0, 155,  22,   0,  17,   0,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:45:13,159] Iteration: [1250/2091]	Batch Time 0.503 (0.494)	Data Time 0.000 (0.001)	Loss 5.7565 (7.0559)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0,  0, 61,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:45:18,111] Iteration: [1260/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 6.2213 (7.0533)	num of Positive tensor([  0,   2,  35,   0,  83,   0,  31,  61,   9, 218,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:45:23,005] Iteration: [1270/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.001)	Loss 6.1905 (7.0491)	num of Positive tensor([  0,   0,   0,   0,   0, 137,   0,  54, 104,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:45:27,886] Iteration: [1280/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 6.4104 (7.0475)	num of Positive tensor([106,   0, 111, 122,   0,   0,  50,   0,  65,   0, 332,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:45:32,798] Iteration: [1290/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 6.9593 (7.0450)	num of Positive tensor([ 0,  0, 15,  0,  0, 28,  7, 32,  2, 59, 90,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:45:37,689] Iteration: [1300/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 6.7359 (7.0475)	num of Positive tensor([ 0,  0,  0, 61, 27,  0,  0, 97,  2,  0, 96,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:45:42,611] Iteration: [1310/2091]	Batch Time 0.491 (0.494)	Data Time 0.000 (0.001)	Loss 8.2189 (7.0486)	num of Positive tensor([1, 8, 0, 0, 1, 0, 0, 4, 0, 2, 4, 0], device='cuda:0')	
+[INFO] [2021-12-15 07:45:47,504] Iteration: [1320/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 7.0777 (7.0458)	num of Positive tensor([ 28, 297,   6,  28,   0, 115,  66,   0,   0,   0,   0,  46],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:45:52,405] Iteration: [1330/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 7.5397 (7.0458)	num of Positive tensor([  0,   0,   0,   2, 133,   0,   0,   0,   0,   0,   4,  42],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:45:57,294] Iteration: [1340/2091]	Batch Time 0.491 (0.494)	Data Time 0.000 (0.001)	Loss 6.9244 (7.0450)	num of Positive tensor([29,  0, 50, 11,  0,  0, 71,  0,  1,  0, 35,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:46:02,208] Iteration: [1350/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.001)	Loss 8.0318 (7.0453)	num of Positive tensor([ 0,  1, 25, 56, 37,  0,  0,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:46:07,126] Iteration: [1360/2091]	Batch Time 0.507 (0.494)	Data Time 0.000 (0.001)	Loss 6.9172 (7.0426)	num of Positive tensor([ 25,   0,   0,   0,  86,   0,   0, 181,  63,  17,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:46:12,055] Iteration: [1370/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.001)	Loss 5.9360 (7.0412)	num of Positive tensor([  0,   0,   0,   0,   2,   0,   0,  85,   0,   0, 200,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:46:16,978] Iteration: [1380/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 7.1007 (7.0423)	num of Positive tensor([ 0, 32, 13, 31,  0,  0,  0, 90,  0,  0,  0, 82], device='cuda:0')	
+[INFO] [2021-12-15 07:46:21,868] Iteration: [1390/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 6.9701 (7.0409)	num of Positive tensor([  0, 117,   7,   0,  62,  27,  63,  53,  31,   0, 108,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:46:26,782] Iteration: [1400/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 6.8000 (7.0384)	num of Positive tensor([ 72,  50,   0,   0,  59,   0, 149,  88,  64,   0,  39,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:46:31,670] Iteration: [1410/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 6.4918 (7.0370)	num of Positive tensor([  0,   0, 185,   0, 197,   0,   6,   0,   0,  18,   0,  59],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:46:36,570] Iteration: [1420/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 7.1794 (7.0372)	num of Positive tensor([ 0,  0,  0, 80,  0,  0,  3,  0, 19,  0, 86, 33], device='cuda:0')	
+[INFO] [2021-12-15 07:46:41,452] Iteration: [1430/2091]	Batch Time 0.494 (0.494)	Data Time 0.000 (0.001)	Loss 6.1604 (7.0374)	num of Positive tensor([ 48,   0,  29,  32,   8, 251,   0,   0,   0,  38,   0,   2],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:46:46,368] Iteration: [1440/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.001)	Loss 6.7392 (7.0362)	num of Positive tensor([  0,   0,   2,   0,   0,   0,  81,  41,   0, 158,  43,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:46:51,281] Iteration: [1450/2091]	Batch Time 0.491 (0.494)	Data Time 0.000 (0.001)	Loss 7.3707 (7.0346)	num of Positive tensor([ 54,   0,  67,   0,   1,   2,   7,  35,   0, 142, 141,   4],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:46:56,182] Iteration: [1460/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 6.7614 (7.0330)	num of Positive tensor([ 4,  0,  0,  0,  0,  0,  0,  0, 63,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:47:01,107] Iteration: [1470/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 8.8246 (7.0335)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   6,   0,   0,   0, 100,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:47:06,037] Iteration: [1480/2091]	Batch Time 0.501 (0.494)	Data Time 0.000 (0.001)	Loss 5.8865 (7.0323)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 32], device='cuda:0')	
+[INFO] [2021-12-15 07:47:10,912] Iteration: [1490/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 6.1694 (7.0307)	num of Positive tensor([  0, 232,  97,   0,   0,   0,  29, 235,  55,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:47:15,793] Iteration: [1500/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 6.3212 (7.0281)	num of Positive tensor([106,  88,   0,   0,   0,   0,  22,   0,   0,  24,  24,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:47:20,691] Iteration: [1510/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 6.4972 (7.0277)	num of Positive tensor([  0,   0,  10,  24,  54,   0, 105,   0,  60,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:47:25,597] Iteration: [1520/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.001)	Loss 9.6155 (7.0293)	num of Positive tensor([27,  0,  9,  0, 57, 30, 48,  0, 61,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:47:30,528] Iteration: [1530/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 6.1003 (7.0266)	num of Positive tensor([  0, 102, 145,  73,   0,   0,  48,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:47:35,409] Iteration: [1540/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 7.4738 (7.0254)	num of Positive tensor([ 0,  0,  2, 30,  0, 53,  0,  0,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:47:40,322] Iteration: [1550/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 6.5079 (7.0245)	num of Positive tensor([ 79,   3,   0,  19,   0, 110,   0,   0,   0, 165,  31, 111],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:47:45,252] Iteration: [1560/2091]	Batch Time 0.512 (0.494)	Data Time 0.000 (0.001)	Loss 6.7006 (7.0236)	num of Positive tensor([ 67,   0,   0, 261,   0,   0,   0,   0,   0,  62,  10,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:47:50,148] Iteration: [1570/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 7.0480 (7.0236)	num of Positive tensor([ 0, 42,  2,  0,  0, 36, 39, 92,  0,  0, 31,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:47:55,074] Iteration: [1580/2091]	Batch Time 0.505 (0.494)	Data Time 0.000 (0.001)	Loss 5.9694 (7.0222)	num of Positive tensor([277,  20,   0,   4,   0,  21,   7,   0,   0,  50,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:47:59,978] Iteration: [1590/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.001)	Loss 6.1254 (7.0207)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   4,  90,   0,   0, 150, 133],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:48:04,913] Iteration: [1600/2091]	Batch Time 0.499 (0.494)	Data Time 0.000 (0.001)	Loss 6.7323 (7.0246)	num of Positive tensor([ 0,  0,  0,  2,  0, 24, 60,  0,  0, 34,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:48:09,822] Iteration: [1610/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.001)	Loss 7.8000 (7.0258)	num of Positive tensor([ 19,   0,   0, 140,  30,   0,  53,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:48:14,726] Iteration: [1620/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.001)	Loss 6.4764 (7.0248)	num of Positive tensor([  0, 117,   0,  76,   0,   0,   0,   0,   0,   0,  15,  60],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:48:19,649] Iteration: [1630/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 7.1507 (7.0249)	num of Positive tensor([  0,   0,   0, 100,  26,  12,   0,   0,   8,  20,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:48:24,573] Iteration: [1640/2091]	Batch Time 0.502 (0.494)	Data Time 0.000 (0.001)	Loss 6.5798 (7.0240)	num of Positive tensor([  0,  26,  35,   0,   2,  10,   5,   0,   4,   0, 105,  11],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:48:29,463] Iteration: [1650/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 6.7811 (7.0217)	num of Positive tensor([62,  0,  0,  0, 48, 60,  0, 36, 43,  0,  0,  4], device='cuda:0')	
+[INFO] [2021-12-15 07:48:34,367] Iteration: [1660/2091]	Batch Time 0.492 (0.493)	Data Time 0.000 (0.001)	Loss 6.5300 (7.0211)	num of Positive tensor([ 37,  29,  24,   0,   4,   9, 101,  58,  24,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:48:39,284] Iteration: [1670/2091]	Batch Time 0.503 (0.493)	Data Time 0.000 (0.001)	Loss 7.3515 (7.0206)	num of Positive tensor([40,  0,  0, 15,  0, 57,  0, 92,  0, 55,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:48:44,195] Iteration: [1680/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.6275 (7.0203)	num of Positive tensor([ 0,  0,  0,  0,  0,  0, 34,  0,  0,  0,  0, 58], device='cuda:0')	
+[INFO] [2021-12-15 07:48:49,101] Iteration: [1690/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 5.9185 (7.0201)	num of Positive tensor([  0,   1,  58, 214,  62, 315,   6,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:48:54,119] Iteration: [1700/2091]	Batch Time 0.498 (0.494)	Data Time 0.000 (0.001)	Loss 7.5642 (7.0175)	num of Positive tensor([ 0,  0, 78, 16, 33,  0, 27,  0, 16,  8,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:48:59,008] Iteration: [1710/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 6.6407 (7.0156)	num of Positive tensor([167,  27,   0,  21,   0,  74, 194,   1,   4,   0, 101,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:03,931] Iteration: [1720/2091]	Batch Time 0.499 (0.493)	Data Time 0.000 (0.001)	Loss 7.8908 (7.0157)	num of Positive tensor([ 0,  0,  0,  0,  0,  0, 49,  0, 45, 76,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:49:08,834] Iteration: [1730/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 6.5185 (7.0151)	num of Positive tensor([145,  12,   0,  66,   0, 346,   0,   7, 146,   0,  87,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:13,758] Iteration: [1740/2091]	Batch Time 0.490 (0.493)	Data Time 0.000 (0.001)	Loss 7.4769 (7.0134)	num of Positive tensor([  0, 169,   0,  92,  20,   0,   0,   0,  89,   5,  21,   8],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:18,648] Iteration: [1750/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 6.7906 (7.0150)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0, 32, 23,  0,  0, 94], device='cuda:0')	
+[INFO] [2021-12-15 07:49:23,557] Iteration: [1760/2091]	Batch Time 0.503 (0.493)	Data Time 0.000 (0.001)	Loss 6.2756 (7.0123)	num of Positive tensor([  0,   0,  75,  24,  14,   0, 101,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:28,460] Iteration: [1770/2091]	Batch Time 0.491 (0.493)	Data Time 0.000 (0.001)	Loss 6.3465 (7.0107)	num of Positive tensor([  0,   0,   6,   0,   0,  85,   0,   0,  48,   8, 102,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:33,376] Iteration: [1780/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.4823 (7.0096)	num of Positive tensor([  0, 164, 159,   0,   0,  25,   2,   0,   0,   3,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:38,301] Iteration: [1790/2091]	Batch Time 0.492 (0.493)	Data Time 0.000 (0.001)	Loss 7.0829 (7.0090)	num of Positive tensor([ 0, 62, 70,  0, 50,  0,  0, 25,  6,  0,  8,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:49:43,221] Iteration: [1800/2091]	Batch Time 0.504 (0.493)	Data Time 0.000 (0.001)	Loss 7.1716 (7.0092)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   0,  56, 118,  47,   0,  62],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:48,118] Iteration: [1810/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.9008 (7.0080)	num of Positive tensor([ 59,   0, 113,   0, 290,   0,  44, 128,   0, 271,   2,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:53,029] Iteration: [1820/2091]	Batch Time 0.484 (0.493)	Data Time 0.000 (0.001)	Loss 6.7407 (7.0081)	num of Positive tensor([  0,   4,   4,   0,   0,   0,   0, 281,   0,   0,  14,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:49:57,932] Iteration: [1830/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 6.3236 (7.0082)	num of Positive tensor([ 44,   0, 220, 103,  69,   0,   0,  87,  33,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:50:02,829] Iteration: [1840/2091]	Batch Time 0.502 (0.493)	Data Time 0.000 (0.001)	Loss 6.2980 (7.0072)	num of Positive tensor([  0,  20,   0,   0,   0,   0,   0,   0,   0, 153,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:50:07,729] Iteration: [1850/2091]	Batch Time 0.486 (0.493)	Data Time 0.000 (0.001)	Loss 6.0569 (7.0068)	num of Positive tensor([ 0, 72,  0,  0,  0,  0,  0, 31,  0,  0, 25,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:50:12,642] Iteration: [1860/2091]	Batch Time 0.492 (0.493)	Data Time 0.000 (0.001)	Loss 6.3701 (7.0057)	num of Positive tensor([ 0, 37,  0,  0, 12,  0,  0, 95,  0,  0, 86, 33], device='cuda:0')	
+[INFO] [2021-12-15 07:50:17,540] Iteration: [1870/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.3878 (7.0044)	num of Positive tensor([ 14,   0,  70,  49,  18, 113,   0, 109,  72,  13,   0,  17],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:50:22,440] Iteration: [1880/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 6.5918 (7.0005)	num of Positive tensor([ 21,   2,   0,   0,   0,  59,   0,  88,   0, 263,  59,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:50:27,353] Iteration: [1890/2091]	Batch Time 0.486 (0.493)	Data Time 0.000 (0.001)	Loss 7.5131 (6.9980)	num of Positive tensor([  0,  78,  10,   0,   0,  40,   0,  13, 173,   0,  10,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:50:32,241] Iteration: [1900/2091]	Batch Time 0.486 (0.493)	Data Time 0.000 (0.001)	Loss 5.9464 (6.9955)	num of Positive tensor([114,  66,  38,   0,   0,   0,   0,  25,   0,   0,   7,   8],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:50:37,142] Iteration: [1910/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 5.8890 (6.9948)	num of Positive tensor([  0,   0,   0,   0,  98, 244,   0,  90,   2,   0,  23,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:50:42,020] Iteration: [1920/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.9259 (6.9942)	num of Positive tensor([  0,   4,   0,  39,   0,   0,   0, 111,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:50:46,906] Iteration: [1930/2091]	Batch Time 0.485 (0.493)	Data Time 0.000 (0.001)	Loss 7.0252 (6.9939)	num of Positive tensor([ 0,  0,  0,  0, 56,  0,  0,  2, 29, 34,  0, 28], device='cuda:0')	
+[INFO] [2021-12-15 07:50:51,824] Iteration: [1940/2091]	Batch Time 0.491 (0.493)	Data Time 0.000 (0.001)	Loss 6.1161 (6.9927)	num of Positive tensor([ 0,  0,  0, 46,  0,  1,  0,  0, 39,  0, 32, 15], device='cuda:0')	
+[INFO] [2021-12-15 07:50:56,735] Iteration: [1950/2091]	Batch Time 0.491 (0.493)	Data Time 0.000 (0.001)	Loss 6.0676 (6.9899)	num of Positive tensor([  0,   0,   0,  23, 118,   7,   0, 144,  54,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:01,634] Iteration: [1960/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.6286 (6.9896)	num of Positive tensor([ 0, 81,  0, 51, 90, 49, 86,  0,  0, 94,  0, 91], device='cuda:0')	
+[INFO] [2021-12-15 07:51:06,559] Iteration: [1970/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 5.5235 (6.9885)	num of Positive tensor([ 0,  0,  0,  0, 79,  0, 13,  0,  0,  0,  0,  6], device='cuda:0')	
+[INFO] [2021-12-15 07:51:11,463] Iteration: [1980/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.5847 (6.9868)	num of Positive tensor([  0, 111,   0,   0,  93, 202,   0,   0,  28,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:16,345] Iteration: [1990/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 7.5097 (6.9860)	num of Positive tensor([  0, 113,  29,   0,   0,   0,   0,   0,   0,   0,   0,  28],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:21,290] Iteration: [2000/2091]	Batch Time 0.509 (0.493)	Data Time 0.000 (0.001)	Loss 6.7496 (6.9865)	num of Positive tensor([  0,  51, 138,   0,  96,  50,  83,   0,  31,  67,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:26,166] Iteration: [2010/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 6.4792 (6.9861)	num of Positive tensor([  0,   0,   0, 120,   0,  85, 107, 146,   0,  21, 231,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:31,068] Iteration: [2020/2091]	Batch Time 0.491 (0.493)	Data Time 0.000 (0.001)	Loss 6.8188 (6.9836)	num of Positive tensor([  0,   4,  84,   0,  22,  10,  19,   0,   0, 143,   0,  24],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:35,969] Iteration: [2030/2091]	Batch Time 0.484 (0.493)	Data Time 0.000 (0.001)	Loss 5.9136 (6.9835)	num of Positive tensor([  0,   0,   0,  98,   0,   0, 172,   0,  40,  81,  62,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:40,877] Iteration: [2040/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 6.0210 (6.9831)	num of Positive tensor([58,  0, 51,  0,  0,  0,  0,  0, 44,  0, 57,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:51:45,760] Iteration: [2050/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.5340 (6.9801)	num of Positive tensor([  0,  44,   4,   0,   0, 114, 469,   0,  47,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:50,680] Iteration: [2060/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 7.1439 (6.9810)	num of Positive tensor([ 36,   0,  96,  11,   0, 187,  62,   0,  46,  21,  74,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:51:55,615] Iteration: [2070/2091]	Batch Time 0.493 (0.493)	Data Time 0.000 (0.001)	Loss 6.7945 (6.9804)	num of Positive tensor([ 0,  0,  0, 11, 20,  5,  0,  0,  0, 85,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:52:00,507] Iteration: [2080/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 6.3944 (6.9789)	num of Positive tensor([  0, 124,  53,   0,   0,   0,   0, 341,  24, 211,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:52:05,156] Iteration: [2090/2091]	Batch Time 0.273 (0.493)	Data Time 0.000 (0.001)	Loss 6.0226 (6.9774)	num of Positive tensor([ 0,  0,  0,  0, 49,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:52:05,862] #################### << Epoch   2 >> ####################
+[INFO] [2021-12-15 07:52:08,015] Iteration: [0/2091]	Batch Time 2.152 (2.152)	Data Time 1.608 (1.608)	Loss 6.7034 (6.7034)	num of Positive tensor([ 0, 61,  4,  0,  0, 68,  0,  0, 60,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:52:12,965] Iteration: [10/2091]	Batch Time 0.503 (0.646)	Data Time 0.000 (0.146)	Loss 6.9558 (7.2317)	num of Positive tensor([232,   0,  47,   0,  22,   0,   0,   0,  54,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:52:17,875] Iteration: [20/2091]	Batch Time 0.487 (0.572)	Data Time 0.000 (0.077)	Loss 6.4804 (6.9303)	num of Positive tensor([ 22, 103,   0,   0,   0,  70,   0,   0,  14,   0,  73,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:52:22,800] Iteration: [30/2091]	Batch Time 0.489 (0.546)	Data Time 0.000 (0.052)	Loss 7.9088 (6.9833)	num of Positive tensor([ 0, 43, 51,  0,  0,  0,  0, 28,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:52:27,709] Iteration: [40/2091]	Batch Time 0.498 (0.533)	Data Time 0.000 (0.040)	Loss 7.5021 (6.9301)	num of Positive tensor([  0,  42, 315,   0,   0,  37,   0,   0,   0,   2,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:52:32,654] Iteration: [50/2091]	Batch Time 0.487 (0.525)	Data Time 0.000 (0.032)	Loss 7.1523 (6.9630)	num of Positive tensor([ 41,   0,   0,   0,  61,  28,  38,   0,   0, 152,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:52:37,604] Iteration: [60/2091]	Batch Time 0.490 (0.520)	Data Time 0.000 (0.027)	Loss 6.1719 (6.9085)	num of Positive tensor([  0, 151,  79,   0, 190,   0,   0,   2,   0,   0,  31,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:52:42,537] Iteration: [70/2091]	Batch Time 0.489 (0.517)	Data Time 0.000 (0.023)	Loss 6.2730 (6.8607)	num of Positive tensor([  0,   0, 210,   0,   0,  25,   2,   0, 401,   2, 175,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:52:47,532] Iteration: [80/2091]	Batch Time 0.506 (0.514)	Data Time 0.000 (0.020)	Loss 6.4225 (6.8779)	num of Positive tensor([ 27,   0,   2,   0,  27,  52,   0,   0,  10, 134,  82,   4],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:52:52,499] Iteration: [90/2091]	Batch Time 0.487 (0.512)	Data Time 0.000 (0.018)	Loss 5.5044 (6.8430)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0,  0, 46,  0, 11, 18], device='cuda:0')	
+[INFO] [2021-12-15 07:52:57,426] Iteration: [100/2091]	Batch Time 0.497 (0.511)	Data Time 0.000 (0.016)	Loss 6.1107 (6.8156)	num of Positive tensor([ 0,  0, 61,  0, 67,  0,  0,  2,  0,  0, 44,  6], device='cuda:0')	
+[INFO] [2021-12-15 07:53:02,408] Iteration: [110/2091]	Batch Time 0.505 (0.509)	Data Time 0.000 (0.015)	Loss 6.1455 (6.7852)	num of Positive tensor([220,   0,  64,   0,  11,  67,  62,  46,   0,  57,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:07,358] Iteration: [120/2091]	Batch Time 0.504 (0.508)	Data Time 0.000 (0.014)	Loss 6.9279 (6.8124)	num of Positive tensor([ 27,  64,   0,  15,  52,  42, 123,  29,  68,   0,   0,   4],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:12,273] Iteration: [130/2091]	Batch Time 0.486 (0.507)	Data Time 0.000 (0.013)	Loss 6.0189 (6.7541)	num of Positive tensor([  0,  67,   0,   0,   0,   0,   0,   0,   0, 119,   0, 161],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:17,220] Iteration: [140/2091]	Batch Time 0.508 (0.506)	Data Time 0.000 (0.012)	Loss 6.6791 (6.7873)	num of Positive tensor([  0,   0,  14,  54,  36,  15,  92,   0,  96, 133,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:22,156] Iteration: [150/2091]	Batch Time 0.493 (0.505)	Data Time 0.000 (0.011)	Loss 7.8878 (6.8118)	num of Positive tensor([  0,   0,  50,   0,   0,   0,  99, 120,   7,  50,  26,  33],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:27,050] Iteration: [160/2091]	Batch Time 0.486 (0.504)	Data Time 0.000 (0.010)	Loss 7.6982 (6.7954)	num of Positive tensor([ 0,  0,  0, 39,  0,  2,  0,  4,  6,  0,  0, 79], device='cuda:0')	
+[INFO] [2021-12-15 07:53:32,031] Iteration: [170/2091]	Batch Time 0.489 (0.504)	Data Time 0.000 (0.010)	Loss 6.3561 (6.8250)	num of Positive tensor([  0,   0,  70,   0,  93, 140,   0,  98, 127,  40,  18, 104],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:36,958] Iteration: [180/2091]	Batch Time 0.489 (0.503)	Data Time 0.000 (0.009)	Loss 6.6522 (6.8045)	num of Positive tensor([78,  0,  0,  0,  0,  0, 76,  0,  0, 15,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:53:41,912] Iteration: [190/2091]	Batch Time 0.508 (0.503)	Data Time 0.000 (0.009)	Loss 7.3060 (6.8037)	num of Positive tensor([  0,   0, 110,   0,   4,   0,   0,   5,   0,   0,   0,  51],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:46,854] Iteration: [200/2091]	Batch Time 0.505 (0.502)	Data Time 0.000 (0.008)	Loss 6.2781 (6.7988)	num of Positive tensor([  0,   0,  32,  10,   0,  58,   0, 102,  25, 107,   0, 132],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:51,784] Iteration: [210/2091]	Batch Time 0.488 (0.502)	Data Time 0.000 (0.008)	Loss 7.4326 (6.7906)	num of Positive tensor([ 16, 100,   0,   1,   0,   0, 103,  14,   0,  64,  27,  26],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:53:56,738] Iteration: [220/2091]	Batch Time 0.485 (0.502)	Data Time 0.000 (0.008)	Loss 7.1656 (6.7898)	num of Positive tensor([105,  51,   0,   0,   4,   0,  86,  23,  11,   0, 143,  48],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:01,681] Iteration: [230/2091]	Batch Time 0.502 (0.501)	Data Time 0.000 (0.007)	Loss 6.5192 (6.7789)	num of Positive tensor([ 89,   0,   0,   0,  53,   0,  50,   0,   0,   2, 145,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:06,598] Iteration: [240/2091]	Batch Time 0.496 (0.501)	Data Time 0.000 (0.007)	Loss 7.5114 (6.7853)	num of Positive tensor([ 0, 87,  0,  0,  0,  2,  1,  0, 16,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:54:11,524] Iteration: [250/2091]	Batch Time 0.488 (0.501)	Data Time 0.000 (0.007)	Loss 6.0374 (6.7704)	num of Positive tensor([ 62, 112,  12,   0,   0,   0,   0,   0,   0,   0,   0, 238],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:16,440] Iteration: [260/2091]	Batch Time 0.501 (0.500)	Data Time 0.000 (0.006)	Loss 6.4781 (6.7616)	num of Positive tensor([  0,   0,   0, 192,   0,   0,   0, 155,  58,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:21,354] Iteration: [270/2091]	Batch Time 0.486 (0.500)	Data Time 0.000 (0.006)	Loss 7.4920 (6.7683)	num of Positive tensor([ 0, 50,  0,  2, 29, 43,  0,  0,  0,  0, 36,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:54:26,285] Iteration: [280/2091]	Batch Time 0.488 (0.500)	Data Time 0.000 (0.006)	Loss 6.5648 (6.7489)	num of Positive tensor([  0, 160,   0,   0,   0,   0,  30,   0,  26,  98,   0,  44],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:31,242] Iteration: [290/2091]	Batch Time 0.489 (0.500)	Data Time 0.000 (0.006)	Loss 6.4673 (6.7441)	num of Positive tensor([  8,   0,   0,   0,   0,   0,  22,   0, 135, 130,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:36,171] Iteration: [300/2091]	Batch Time 0.498 (0.499)	Data Time 0.000 (0.006)	Loss 6.9033 (6.7387)	num of Positive tensor([  0,  91,   0, 108,   0,  70,   0,  46, 204,   0,  41,  48],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:41,103] Iteration: [310/2091]	Batch Time 0.487 (0.499)	Data Time 0.000 (0.005)	Loss 6.5652 (6.7358)	num of Positive tensor([  0,   0,  33, 150,  67,   0,  40,   0,   0,   0,  32,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:46,060] Iteration: [320/2091]	Batch Time 0.508 (0.499)	Data Time 0.000 (0.005)	Loss 6.9149 (6.7537)	num of Positive tensor([ 16,   0,  42,   0,   0,  21,   0,   0,   0, 200,   9,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:54:50,999] Iteration: [330/2091]	Batch Time 0.498 (0.499)	Data Time 0.000 (0.005)	Loss 7.3111 (6.7589)	num of Positive tensor([73, 64,  0,  0,  0,  0, 51,  0, 52,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:54:55,962] Iteration: [340/2091]	Batch Time 0.492 (0.499)	Data Time 0.000 (0.005)	Loss 6.4834 (6.7673)	num of Positive tensor([  0,   0, 109,  72,   0,  79,  34,   0, 201,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:00,896] Iteration: [350/2091]	Batch Time 0.487 (0.499)	Data Time 0.000 (0.005)	Loss 6.9577 (6.7677)	num of Positive tensor([  0,   0, 136,   0,   0,  44,   0,   2,   0,   1,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:05,842] Iteration: [360/2091]	Batch Time 0.507 (0.499)	Data Time 0.000 (0.005)	Loss 7.2314 (6.7748)	num of Positive tensor([  0,   0,   0,  67, 184,  76,   7,   0,   0,  47,  23,  29],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:10,776] Iteration: [370/2091]	Batch Time 0.493 (0.498)	Data Time 0.000 (0.005)	Loss 6.1494 (6.7702)	num of Positive tensor([  0,  78,   0,   0, 137,   2,   0,   0,  28,   0,   0,  26],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:15,721] Iteration: [380/2091]	Batch Time 0.487 (0.498)	Data Time 0.000 (0.005)	Loss 6.7697 (6.7701)	num of Positive tensor([ 0,  0,  0, 53,  0, 25, 31,  0,  0,  0, 19,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:55:20,632] Iteration: [390/2091]	Batch Time 0.489 (0.498)	Data Time 0.000 (0.004)	Loss 7.0061 (6.7766)	num of Positive tensor([ 23, 111, 181,   0,   2,   0,  88, 106,   0,   0,   0,  49],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:25,595] Iteration: [400/2091]	Batch Time 0.493 (0.498)	Data Time 0.000 (0.004)	Loss 7.1209 (6.7727)	num of Positive tensor([  0,  35,   0,  43,  45,   0,   0,   0,   1,   0, 135,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:30,527] Iteration: [410/2091]	Batch Time 0.493 (0.498)	Data Time 0.000 (0.004)	Loss 6.9784 (6.7706)	num of Positive tensor([ 0, 68,  0, 58,  0,  0, 15,  0,  0, 59,  0, 77], device='cuda:0')	
+[INFO] [2021-12-15 07:55:35,469] Iteration: [420/2091]	Batch Time 0.488 (0.498)	Data Time 0.000 (0.004)	Loss 6.2150 (6.7684)	num of Positive tensor([212, 191,   0,  98,  87,   0,   4,  31,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:40,375] Iteration: [430/2091]	Batch Time 0.491 (0.498)	Data Time 0.000 (0.004)	Loss 7.7030 (6.7699)	num of Positive tensor([  8,  77,  79,   0,   3,  12,   0,  93,   0, 131,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:45,263] Iteration: [440/2091]	Batch Time 0.490 (0.498)	Data Time 0.000 (0.004)	Loss 6.7745 (6.7632)	num of Positive tensor([  0,   0,   0,   0,   0, 158,   0,   0,   0,   0,   0,   6],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:50,183] Iteration: [450/2091]	Batch Time 0.492 (0.497)	Data Time 0.000 (0.004)	Loss 6.9154 (6.7561)	num of Positive tensor([  0,   0,  78, 172,  46,   0,   7,   0,   0,  42,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:55:55,100] Iteration: [460/2091]	Batch Time 0.502 (0.497)	Data Time 0.000 (0.004)	Loss 6.6116 (6.7553)	num of Positive tensor([ 46, 100,   0,   0,   0, 141,   0,  13,  94,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:56:00,035] Iteration: [470/2091]	Batch Time 0.488 (0.497)	Data Time 0.000 (0.004)	Loss 6.4632 (6.7584)	num of Positive tensor([ 2, 45,  0,  0,  0,  0,  0,  0,  8,  0, 36, 11], device='cuda:0')	
+[INFO] [2021-12-15 07:56:04,952] Iteration: [480/2091]	Batch Time 0.504 (0.497)	Data Time 0.000 (0.004)	Loss 6.0357 (6.7598)	num of Positive tensor([ 0,  0,  0,  0,  1, 20,  2, 78,  0,  7, 17,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:56:09,857] Iteration: [490/2091]	Batch Time 0.488 (0.497)	Data Time 0.000 (0.004)	Loss 5.7577 (6.7522)	num of Positive tensor([  0,   0,   0,  59, 252,  35,   0,   0,   6,   0,  46,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:56:14,820] Iteration: [500/2091]	Batch Time 0.502 (0.497)	Data Time 0.000 (0.004)	Loss 6.1211 (6.7492)	num of Positive tensor([  0,   0,   0,  87,  55,  15, 227,  18,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:56:19,805] Iteration: [510/2091]	Batch Time 0.490 (0.497)	Data Time 0.000 (0.003)	Loss 6.9420 (6.7478)	num of Positive tensor([ 0,  0,  0, 49,  0,  0,  0, 32, 43,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:56:24,760] Iteration: [520/2091]	Batch Time 0.499 (0.497)	Data Time 0.000 (0.003)	Loss 5.7985 (6.7460)	num of Positive tensor([90,  0,  0,  0,  0, 31, 24,  0,  0, 76,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:56:29,687] Iteration: [530/2091]	Batch Time 0.489 (0.497)	Data Time 0.000 (0.003)	Loss 7.7911 (6.7436)	num of Positive tensor([ 0,  0,  0,  0,  0,  8,  8, 47,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:56:34,638] Iteration: [540/2091]	Batch Time 0.506 (0.497)	Data Time 0.000 (0.003)	Loss 6.8163 (6.7370)	num of Positive tensor([  0,   0,   0, 107,  68,   0,   0,   0,   0,   3,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:56:39,579] Iteration: [550/2091]	Batch Time 0.490 (0.497)	Data Time 0.000 (0.003)	Loss 6.0613 (6.7380)	num of Positive tensor([363,   0,  13, 147,   0,  86,   0, 107,   0,   0,   2,  11],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:56:44,551] Iteration: [560/2091]	Batch Time 0.511 (0.497)	Data Time 0.000 (0.003)	Loss 6.8469 (6.7322)	num of Positive tensor([ 0, 73,  0, 72,  0,  0,  0,  0, 56,  0,  0,  4], device='cuda:0')	
+[INFO] [2021-12-15 07:56:49,459] Iteration: [570/2091]	Batch Time 0.496 (0.497)	Data Time 0.000 (0.003)	Loss 6.3416 (6.7289)	num of Positive tensor([ 0,  0, 64, 64, 74,  0,  0,  0, 64,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:56:54,381] Iteration: [580/2091]	Batch Time 0.503 (0.497)	Data Time 0.000 (0.003)	Loss 6.0270 (6.7277)	num of Positive tensor([  0,   0,   0,   0, 111,   0,   0,  52,  88,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:56:59,325] Iteration: [590/2091]	Batch Time 0.487 (0.497)	Data Time 0.000 (0.003)	Loss 6.4633 (6.7271)	num of Positive tensor([  0,   0,   0,   0,   4,  40,   0,   0,   0,   0, 112,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:57:04,280] Iteration: [600/2091]	Batch Time 0.507 (0.497)	Data Time 0.000 (0.003)	Loss 7.2937 (6.7232)	num of Positive tensor([  0,  75,   0,   0, 123,  58,   0,  89,   0,   1,  38,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:57:09,191] Iteration: [610/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.003)	Loss 6.7055 (6.7264)	num of Positive tensor([  0, 166,   0,   0,   0,   0,  58,  15, 107,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:57:14,127] Iteration: [620/2091]	Batch Time 0.487 (0.496)	Data Time 0.000 (0.003)	Loss 6.7425 (6.7221)	num of Positive tensor([  0,  20,  43,   0,  56,  34, 191,  41,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:57:19,067] Iteration: [630/2091]	Batch Time 0.491 (0.496)	Data Time 0.000 (0.003)	Loss 5.7280 (6.7261)	num of Positive tensor([ 56,  36,   0,   0,   0,   0,   0,   0, 162,  67,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:57:23,987] Iteration: [640/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.003)	Loss 6.3103 (6.7243)	num of Positive tensor([ 44,   0,   0,  90,   0,   0,   0,   0, 120,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:57:28,895] Iteration: [650/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.003)	Loss 6.7997 (6.7295)	num of Positive tensor([ 0, 74,  0,  0,  0,  0,  0,  0,  0,  0, 18, 48], device='cuda:0')	
+[INFO] [2021-12-15 07:57:33,803] Iteration: [660/2091]	Batch Time 0.491 (0.496)	Data Time 0.000 (0.003)	Loss 6.5560 (6.7304)	num of Positive tensor([60, 20, 93,  6,  0,  0,  0,  0,  6,  0, 34,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:57:38,720] Iteration: [670/2091]	Batch Time 0.488 (0.496)	Data Time 0.000 (0.003)	Loss 7.3599 (6.7274)	num of Positive tensor([  0,  70, 102,   0,  85,  44,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:57:43,648] Iteration: [680/2091]	Batch Time 0.485 (0.496)	Data Time 0.000 (0.003)	Loss 6.9543 (6.7263)	num of Positive tensor([ 0,  0,  0, 88,  0, 27, 50,  0, 54,  0,  8,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:57:48,538] Iteration: [690/2091]	Batch Time 0.488 (0.496)	Data Time 0.000 (0.003)	Loss 7.1782 (6.7250)	num of Positive tensor([292,   0,   0,   0,   0, 179,   0,   0,   0,  69,   0,   8],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:57:53,466] Iteration: [700/2091]	Batch Time 0.490 (0.496)	Data Time 0.000 (0.003)	Loss 7.2633 (6.7230)	num of Positive tensor([73,  0, 35,  0,  0,  0, 36, 54,  0, 26,  0, 91], device='cuda:0')	
+[INFO] [2021-12-15 07:57:58,366] Iteration: [710/2091]	Batch Time 0.486 (0.496)	Data Time 0.000 (0.003)	Loss 5.7071 (6.7199)	num of Positive tensor([  0,   0,   0, 101,  31,   0,   0,   0,   0, 103,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:58:03,310] Iteration: [720/2091]	Batch Time 0.503 (0.496)	Data Time 0.000 (0.003)	Loss 8.8527 (6.7219)	num of Positive tensor([ 0,  0,  0, 47,  0,  0,  0, 15,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:58:08,216] Iteration: [730/2091]	Batch Time 0.488 (0.496)	Data Time 0.000 (0.003)	Loss 6.2474 (6.7209)	num of Positive tensor([ 3, 12,  0,  0, 23,  2, 90,  0,  0,  0, 27,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:58:13,093] Iteration: [740/2091]	Batch Time 0.489 (0.496)	Data Time 0.000 (0.002)	Loss 6.9525 (6.7212)	num of Positive tensor([  0,  33,   0,   0,   0,   0,  37,   0, 131,   0,   7,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:58:18,036] Iteration: [750/2091]	Batch Time 0.501 (0.496)	Data Time 0.000 (0.002)	Loss 6.4623 (6.7227)	num of Positive tensor([114,  24,   7,   0,   0,  40,   0,   0,   0,   0,   0,   2],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:58:22,996] Iteration: [760/2091]	Batch Time 0.503 (0.496)	Data Time 0.000 (0.002)	Loss 5.3954 (6.7175)	num of Positive tensor([  0,   0,   0, 198,   0,   0, 152,   0,   0,   0, 115,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:58:27,922] Iteration: [770/2091]	Batch Time 0.493 (0.496)	Data Time 0.000 (0.002)	Loss 7.0366 (6.7162)	num of Positive tensor([110,   0,   0,   0,   0, 175,   0,   0, 157,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:58:32,834] Iteration: [780/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.002)	Loss 6.5529 (6.7141)	num of Positive tensor([ 54,   0,   0,   0,   0,   0,   0, 382,   2, 191,  11,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:58:37,759] Iteration: [790/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 6.1036 (6.7102)	num of Positive tensor([ 0,  1, 95, 79, 82, 18,  2, 22,  0,  2,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:58:42,663] Iteration: [800/2091]	Batch Time 0.501 (0.495)	Data Time 0.000 (0.002)	Loss 5.6161 (6.7061)	num of Positive tensor([180,   0,   0,   0,   0,   4,   8,   0,   0,  54,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:58:47,621] Iteration: [810/2091]	Batch Time 0.492 (0.495)	Data Time 0.000 (0.002)	Loss 7.9119 (6.7053)	num of Positive tensor([ 0,  8,  0, 90,  0,  0, 24,  0,  0,  0, 32,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:58:52,527] Iteration: [820/2091]	Batch Time 0.492 (0.495)	Data Time 0.000 (0.002)	Loss 6.5644 (6.7009)	num of Positive tensor([ 0, 57, 70,  0,  0, 72,  0,  9,  0, 75,  0, 88], device='cuda:0')	
+[INFO] [2021-12-15 07:58:57,464] Iteration: [830/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.002)	Loss 6.9099 (6.7050)	num of Positive tensor([64,  0, 62,  0,  0,  0,  0,  0,  2,  9, 26,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:59:02,364] Iteration: [840/2091]	Batch Time 0.506 (0.495)	Data Time 0.000 (0.002)	Loss 8.3123 (6.7060)	num of Positive tensor([ 9,  0,  0, 67,  0, 23,  0,  0,  0,  0, 81,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:59:07,272] Iteration: [850/2091]	Batch Time 0.490 (0.495)	Data Time 0.000 (0.002)	Loss 6.8337 (6.7017)	num of Positive tensor([  0,   0,   0,  87, 100,   0,   0,  20,  77,   2,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:12,186] Iteration: [860/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 5.6061 (6.7039)	num of Positive tensor([  0,  40,   0,   2,   0,   0,  20,   0, 105,   0,  16,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:17,091] Iteration: [870/2091]	Batch Time 0.498 (0.495)	Data Time 0.000 (0.002)	Loss 6.5269 (6.7017)	num of Positive tensor([  0,   0,  45,  54, 135,  30,   0, 119,  27,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:22,005] Iteration: [880/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.002)	Loss 6.7892 (6.6991)	num of Positive tensor([  6,   0,  84,  80,   0,   0, 193,  13,  36,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:26,938] Iteration: [890/2091]	Batch Time 0.509 (0.495)	Data Time 0.000 (0.002)	Loss 6.8874 (6.7000)	num of Positive tensor([  0,   0,   0,   0,   0,   0, 127, 264,   0,  10,  46,  62],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:31,849] Iteration: [900/2091]	Batch Time 0.490 (0.495)	Data Time 0.000 (0.002)	Loss 5.5309 (6.6975)	num of Positive tensor([  2,  56,   0,   0,   0, 107, 104,  12,  35, 100,  40,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:36,791] Iteration: [910/2091]	Batch Time 0.506 (0.495)	Data Time 0.000 (0.002)	Loss 6.9967 (6.6982)	num of Positive tensor([  0,   0,  33,   0,   0,  52,   0,   0,   0,   0, 115, 221],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:41,697] Iteration: [920/2091]	Batch Time 0.492 (0.495)	Data Time 0.000 (0.002)	Loss 6.9854 (6.6977)	num of Positive tensor([184,   0, 152,  36,  12, 117,   0,   0,  87,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:46,611] Iteration: [930/2091]	Batch Time 0.501 (0.495)	Data Time 0.000 (0.002)	Loss 6.9936 (6.6974)	num of Positive tensor([65,  0, 32,  0, 32, 29,  0,  0,  0, 45, 59,  0], device='cuda:0')	
+[INFO] [2021-12-15 07:59:51,529] Iteration: [940/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.002)	Loss 6.1133 (6.6949)	num of Positive tensor([  0,  35,  47,  57,   0,  92,   0,   0,   0,   0,   0, 180],
+       device='cuda:0')	
+[INFO] [2021-12-15 07:59:56,447] Iteration: [950/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.002)	Loss 6.6218 (6.6965)	num of Positive tensor([110,  78,  16,   5,   0,   0,   0,  78, 130,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:00:01,354] Iteration: [960/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.002)	Loss 7.0869 (6.6978)	num of Positive tensor([ 8, 50,  0,  0, 37,  0,  0,  0, 35, 41,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:00:06,264] Iteration: [970/2091]	Batch Time 0.488 (0.495)	Data Time 0.000 (0.002)	Loss 6.0241 (6.6978)	num of Positive tensor([  4,   0,  24,   0, 107,  56,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:00:11,177] Iteration: [980/2091]	Batch Time 0.491 (0.495)	Data Time 0.000 (0.002)	Loss 6.8806 (6.6999)	num of Positive tensor([  0,  24,   0,  42, 155,   0,   0,   0,  72,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:00:16,117] Iteration: [990/2091]	Batch Time 0.502 (0.495)	Data Time 0.000 (0.002)	Loss 8.8862 (6.7014)	num of Positive tensor([74, 30,  0,  0,  4,  0,  0, 50,  0,  0, 18,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:00:21,034] Iteration: [1000/2091]	Batch Time 0.489 (0.495)	Data Time 0.000 (0.002)	Loss 5.3502 (6.6965)	num of Positive tensor([  2,   0,   0,  64, 138,   4,  40,   0,   0,  26,  38,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:00:25,921] Iteration: [1010/2091]	Batch Time 0.489 (0.495)	Data Time 0.000 (0.002)	Loss 7.0792 (6.6920)	num of Positive tensor([ 47,  99,   0,   0,   0,   0,   0,   5, 134,   0,   4, 199],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:00:30,821] Iteration: [1020/2091]	Batch Time 0.484 (0.495)	Data Time 0.000 (0.002)	Loss 8.2694 (6.6925)	num of Positive tensor([2, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0], device='cuda:0')	
+[INFO] [2021-12-15 08:00:35,725] Iteration: [1030/2091]	Batch Time 0.487 (0.495)	Data Time 0.000 (0.002)	Loss 5.8109 (6.6903)	num of Positive tensor([  0,   0,  80, 163, 108,   0,  25,  14, 183,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:00:40,642] Iteration: [1040/2091]	Batch Time 0.492 (0.495)	Data Time 0.000 (0.002)	Loss 7.3712 (6.6943)	num of Positive tensor([59,  0,  1,  0, 12, 54,  0,  0,  0, 27,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:00:45,545] Iteration: [1050/2091]	Batch Time 0.493 (0.494)	Data Time 0.000 (0.002)	Loss 6.5244 (6.6964)	num of Positive tensor([  0,  20,  47,   2,  70,   0,   5,   0,   0, 211,   0,  90],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:00:50,461] Iteration: [1060/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.002)	Loss 6.5888 (6.7010)	num of Positive tensor([  0,   0,   0,   0,   0,  47,  15,  46,  66,  87, 160,   2],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:00:55,367] Iteration: [1070/2091]	Batch Time 0.493 (0.494)	Data Time 0.000 (0.002)	Loss 6.6285 (6.7020)	num of Positive tensor([ 0,  0,  0, 55, 27,  0,  0,  0, 30, 14,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:01:00,274] Iteration: [1080/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.002)	Loss 6.5704 (6.7009)	num of Positive tensor([ 0,  0,  0, 30,  0, 12, 63, 56,  5,  4, 32,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:01:05,181] Iteration: [1090/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.002)	Loss 5.9491 (6.7008)	num of Positive tensor([  0,   0,   0,   0,  22,   0,  30,   0,   0, 132,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:01:10,086] Iteration: [1100/2091]	Batch Time 0.500 (0.494)	Data Time 0.000 (0.002)	Loss 6.9882 (6.7008)	num of Positive tensor([ 0,  0, 63, 82,  6, 99,  0,  0,  0,  0,  0,  7], device='cuda:0')	
+[INFO] [2021-12-15 08:01:14,995] Iteration: [1110/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.002)	Loss 6.3942 (6.6973)	num of Positive tensor([  0,   0,  35,   0,   2,  15,   0, 110,  24,   0,  41,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:01:19,900] Iteration: [1120/2091]	Batch Time 0.503 (0.494)	Data Time 0.000 (0.002)	Loss 6.4567 (6.6976)	num of Positive tensor([  0,   0,   0,   0,  44,  35,  15,   0,  45,   6,   0, 240],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:01:24,830] Iteration: [1130/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.002)	Loss 5.6586 (6.6956)	num of Positive tensor([ 74,   0, 139,  61,   0,   0,   0,  84, 104,   0, 275,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:01:29,719] Iteration: [1140/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.002)	Loss 5.9104 (6.6924)	num of Positive tensor([ 70,   0,   0,  14,   0, 134,  53,  86,  25,  28,  63,   6],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:01:34,614] Iteration: [1150/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.002)	Loss 6.7417 (6.6936)	num of Positive tensor([  0,   0, 184, 105,   2,  12,  26, 477,   0, 153, 162,  67],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:01:39,536] Iteration: [1160/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.002)	Loss 9.6455 (6.6974)	num of Positive tensor([52,  0, 29,  0,  0,  0,  0,  8,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:01:44,463] Iteration: [1170/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.002)	Loss 7.5407 (6.7003)	num of Positive tensor([  0,   0,   0,   0,   0,   0,  30, 186,   0,  40,   9,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:01:49,404] Iteration: [1180/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.002)	Loss 7.3718 (6.6987)	num of Positive tensor([  0,  88,  86,  86, 182,  27,   0,   0,  53,   0,   4,  51],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:01:54,293] Iteration: [1190/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.002)	Loss 9.1620 (6.7022)	num of Positive tensor([ 0,  0,  0, 15, 29,  0,  0,  2,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:01:59,216] Iteration: [1200/2091]	Batch Time 0.491 (0.494)	Data Time 0.000 (0.002)	Loss 7.0837 (6.7045)	num of Positive tensor([  0,   2,  32,   0,   0,   0,  86,   0,   0,  72, 116,  87],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:04,148] Iteration: [1210/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.002)	Loss 6.4969 (6.7068)	num of Positive tensor([  2,   0,  37,   0,   4,   0,   0,   0,  95,   0, 226,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:09,053] Iteration: [1220/2091]	Batch Time 0.491 (0.494)	Data Time 0.000 (0.002)	Loss 7.0435 (6.7088)	num of Positive tensor([  0,   0,   0, 115,   0,  36, 144,  40,   0,   3,  37,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:13,968] Iteration: [1230/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.002)	Loss 6.4782 (6.7093)	num of Positive tensor([  0,   0, 124,  75, 149,   0, 266,   0,  98,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:18,891] Iteration: [1240/2091]	Batch Time 0.498 (0.494)	Data Time 0.000 (0.002)	Loss 5.8494 (6.7064)	num of Positive tensor([  0,   1,   0,   0,   0,   0,   0,   0,  30,   0, 114,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:23,811] Iteration: [1250/2091]	Batch Time 0.485 (0.494)	Data Time 0.000 (0.002)	Loss 5.8518 (6.7052)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   6,   0,   0, 148,  26,   6],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:28,735] Iteration: [1260/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.002)	Loss 6.6112 (6.7050)	num of Positive tensor([  0,   0,   0,  70,   0,   0,   0, 158,  60,  77,  69,  66],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:33,655] Iteration: [1270/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.002)	Loss 5.8616 (6.7046)	num of Positive tensor([  0,   0,  81, 219,   5,   0,   0,  84,   0, 143,   8,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:38,527] Iteration: [1280/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.002)	Loss 6.6967 (6.7019)	num of Positive tensor([  0,  28,  35,   0,   0, 225, 125,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:43,420] Iteration: [1290/2091]	Batch Time 0.491 (0.494)	Data Time 0.000 (0.002)	Loss 6.7022 (6.7005)	num of Positive tensor([  0,  54,  88,  84, 120,   0,   0,  40,   0,  35,  28,  41],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:02:48,306] Iteration: [1300/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.002)	Loss 5.2353 (6.7001)	num of Positive tensor([ 0,  0, 65, 55, 49, 29,  0,  0, 53,  0,  0, 37], device='cuda:0')	
+[INFO] [2021-12-15 08:02:53,214] Iteration: [1310/2091]	Batch Time 0.495 (0.494)	Data Time 0.000 (0.002)	Loss 6.1951 (6.7011)	num of Positive tensor([ 0, 81,  0,  0,  0,  0, 31,  0, 47, 50, 38,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:02:58,109] Iteration: [1320/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.002)	Loss 6.0983 (6.6974)	num of Positive tensor([  0,   0,   2,   0,   0,  79,   0,  72,  49, 248,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:03,027] Iteration: [1330/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.002)	Loss 7.2948 (6.6947)	num of Positive tensor([  0,   0,   0,  24,  60,  58,   5,  89, 144,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:07,930] Iteration: [1340/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.002)	Loss 7.4022 (6.6966)	num of Positive tensor([  0,   0,  30,  51,  56,   0,   0,   1,  42,  16,   2, 130],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:12,844] Iteration: [1350/2091]	Batch Time 0.490 (0.494)	Data Time 0.000 (0.002)	Loss 6.6425 (6.6972)	num of Positive tensor([32,  0, 28, 34,  0, 68,  0,  0,  0,  0, 18,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:03:17,772] Iteration: [1360/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.002)	Loss 6.5803 (6.6950)	num of Positive tensor([  0,  77,  12,   0, 160,   0, 117,   0,   0,   0,   4,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:22,694] Iteration: [1370/2091]	Batch Time 0.489 (0.494)	Data Time 0.000 (0.001)	Loss 5.7869 (6.6938)	num of Positive tensor([ 37,  13,  26, 325,   0,   0,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:27,566] Iteration: [1380/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 5.9623 (6.6916)	num of Positive tensor([206,   5,   0,   0,   0,   0,  66,   0,   0,   0,   0,   4],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:32,443] Iteration: [1390/2091]	Batch Time 0.488 (0.494)	Data Time 0.000 (0.001)	Loss 5.9089 (6.6917)	num of Positive tensor([  0,   5, 152, 102, 106,  25,   0,   0,   0, 188, 119,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:37,350] Iteration: [1400/2091]	Batch Time 0.505 (0.494)	Data Time 0.000 (0.001)	Loss 6.3329 (6.6893)	num of Positive tensor([ 53,   0,  83,   0,   2,   0,  94, 103,   0,  51, 105,   8],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:42,285] Iteration: [1410/2091]	Batch Time 0.494 (0.494)	Data Time 0.000 (0.001)	Loss 7.8288 (6.6934)	num of Positive tensor([ 0,  0,  0,  0, 54,  2, 26, 13,  8, 19, 27,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:03:47,207] Iteration: [1420/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 6.2472 (6.6894)	num of Positive tensor([ 16,   0,  70,  36,   0,  67,  25,  49,   0,   0,   0, 137],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:52,104] Iteration: [1430/2091]	Batch Time 0.498 (0.494)	Data Time 0.000 (0.001)	Loss 6.7021 (6.6876)	num of Positive tensor([  0,  52,  64,   2,   0,  36,   0, 107,   0,  70,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:03:57,041] Iteration: [1440/2091]	Batch Time 0.487 (0.494)	Data Time 0.000 (0.001)	Loss 6.4968 (6.6886)	num of Positive tensor([158,   0,   0,   0,  41,   0,   0,   0,   0,   2,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:04:01,968] Iteration: [1450/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 7.2892 (6.6872)	num of Positive tensor([ 49, 177,   0,   0,  32, 280,   0,  26,   0,  13,   0, 194],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:04:06,894] Iteration: [1460/2091]	Batch Time 0.486 (0.494)	Data Time 0.000 (0.001)	Loss 5.7484 (6.6869)	num of Positive tensor([  0,   0,   0, 186,   0,   0,  10,  83, 143,   0,   0,  77],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:04:11,803] Iteration: [1470/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 8.3947 (6.6861)	num of Positive tensor([ 0,  0,  0,  0,  0, 60,  0,  0,  0,  0, 38,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:04:16,681] Iteration: [1480/2091]	Batch Time 0.486 (0.493)	Data Time 0.000 (0.001)	Loss 8.0067 (6.6837)	num of Positive tensor([11,  0,  4,  0,  0,  0,  2, 74,  0,  0, 10,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:04:21,592] Iteration: [1490/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 7.2948 (6.6850)	num of Positive tensor([ 0,  0, 47, 78,  0,  0,  0,  0,  0,  0,  0,  8], device='cuda:0')	
+[INFO] [2021-12-15 08:04:26,523] Iteration: [1500/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.7374 (6.6863)	num of Positive tensor([  6,   0,   0,   0,   0, 126,  28,  90,   0,   0,   0,  39],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:04:31,461] Iteration: [1510/2091]	Batch Time 0.498 (0.493)	Data Time 0.000 (0.001)	Loss 6.7351 (6.6875)	num of Positive tensor([156,  16, 157,   0,   0,   0,   0,  94,  42,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:04:36,390] Iteration: [1520/2091]	Batch Time 0.502 (0.493)	Data Time 0.000 (0.001)	Loss 6.4885 (6.6845)	num of Positive tensor([  0,   0,  13,   0,  86, 117,  64,   0,   0,  87,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:04:41,304] Iteration: [1530/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 5.7855 (6.6821)	num of Positive tensor([10, 28,  0, 69,  0,  0, 28,  0, 39,  0, 28, 85], device='cuda:0')	
+[INFO] [2021-12-15 08:04:46,186] Iteration: [1540/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 6.0131 (6.6798)	num of Positive tensor([  0,   0,   0,   0, 158,   0,   0,   0,   0,   0,   0,  29],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:04:51,130] Iteration: [1550/2091]	Batch Time 0.485 (0.493)	Data Time 0.000 (0.001)	Loss 5.2370 (6.6773)	num of Positive tensor([136,   0,  47,   0,  64,   0,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:04:56,029] Iteration: [1560/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 6.4140 (6.6761)	num of Positive tensor([ 38,  87,   0,   7,   0, 178,   0,  59,   0,   2,  38,  46],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:05:00,959] Iteration: [1570/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 5.4560 (6.6733)	num of Positive tensor([10,  0,  0,  0,  0, 63,  0, 52,  0,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:05:05,870] Iteration: [1580/2091]	Batch Time 0.503 (0.493)	Data Time 0.000 (0.001)	Loss 8.3036 (6.6730)	num of Positive tensor([ 0,  6,  0, 79,  0,  0,  0, 75,  0,  3,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:05:10,782] Iteration: [1590/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 5.7440 (6.6687)	num of Positive tensor([  4,   0,   0,   0,  91,   3, 103,   0,   0,  47,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:05:15,676] Iteration: [1600/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 6.1709 (6.6680)	num of Positive tensor([ 0,  9, 60,  2,  0,  4, 73,  0, 18,  0, 28,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:05:20,575] Iteration: [1610/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 5.6929 (6.6652)	num of Positive tensor([  0,   0,  45,   0,   0,  94,   0,   0,  84, 249,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:05:25,516] Iteration: [1620/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 7.3383 (6.6657)	num of Positive tensor([38,  0,  0, 20,  0,  0, 42,  0, 10,  0, 80, 61], device='cuda:0')	
+[INFO] [2021-12-15 08:05:30,430] Iteration: [1630/2091]	Batch Time 0.495 (0.493)	Data Time 0.000 (0.001)	Loss 6.6122 (6.6656)	num of Positive tensor([ 71,   0, 119,  67,  46,  40,   0, 101, 309,  29,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:05:35,364] Iteration: [1640/2091]	Batch Time 0.491 (0.493)	Data Time 0.000 (0.001)	Loss 6.4429 (6.6643)	num of Positive tensor([ 21,   0,  49,   0,   0, 158,  30,   0,   0,  59,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:05:40,282] Iteration: [1650/2091]	Batch Time 0.491 (0.493)	Data Time 0.000 (0.001)	Loss 6.8602 (6.6631)	num of Positive tensor([  2,   0,  73,   0,  29,  55,   0,   0,   0,   2,  40, 109],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:05:45,210] Iteration: [1660/2091]	Batch Time 0.504 (0.493)	Data Time 0.000 (0.001)	Loss 6.1452 (6.6643)	num of Positive tensor([113,   0,  20,  11,   0,   0,   0,  12, 104, 100,   0,  29],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:05:50,162] Iteration: [1670/2091]	Batch Time 0.495 (0.493)	Data Time 0.000 (0.001)	Loss 6.5678 (6.6630)	num of Positive tensor([  0,   0,   0,  75, 126,  42,  71,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:05:55,071] Iteration: [1680/2091]	Batch Time 0.486 (0.493)	Data Time 0.000 (0.001)	Loss 8.5186 (6.6636)	num of Positive tensor([ 0, 49,  0,  0,  0,  6,  0, 43, 13,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:05:59,984] Iteration: [1690/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 5.2170 (6.6624)	num of Positive tensor([ 0,  0, 29,  0,  0,  0, 53, 17,  0,  0, 16, 49], device='cuda:0')	
+[INFO] [2021-12-15 08:06:04,873] Iteration: [1700/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 5.0198 (6.6625)	num of Positive tensor([146,  20,   0,   0,   0,   0,   0,   0,   0,   0,   0,  53],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:06:09,768] Iteration: [1710/2091]	Batch Time 0.483 (0.493)	Data Time 0.000 (0.001)	Loss 8.9384 (6.6618)	num of Positive tensor([0, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0], device='cuda:0')	
+[INFO] [2021-12-15 08:06:14,665] Iteration: [1720/2091]	Batch Time 0.490 (0.493)	Data Time 0.000 (0.001)	Loss 6.5930 (6.6623)	num of Positive tensor([  0, 132,  60,   0,   0,   0,   0,   2, 105,  73,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:06:19,542] Iteration: [1730/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 8.1436 (6.6625)	num of Positive tensor([ 0, 18,  0,  0, 49, 36, 43,  0,  1,  0,  0, 21], device='cuda:0')	
+[INFO] [2021-12-15 08:06:24,449] Iteration: [1740/2091]	Batch Time 0.503 (0.493)	Data Time 0.000 (0.001)	Loss 6.4074 (6.6629)	num of Positive tensor([  0,   0,  98,  74,  56,  24,   0, 242,   0,   0,  94,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:06:29,349] Iteration: [1750/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 7.1256 (6.6620)	num of Positive tensor([  0,   0,   0,  53,   0,   0,   0,   0,   0,   0, 225,   1],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:06:34,268] Iteration: [1760/2091]	Batch Time 0.500 (0.493)	Data Time 0.000 (0.001)	Loss 6.6630 (6.6623)	num of Positive tensor([  0,   0, 101,  93,   0,   0,   0,  87,   0,  26,  83,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:06:39,179] Iteration: [1770/2091]	Batch Time 0.485 (0.493)	Data Time 0.000 (0.001)	Loss 6.7749 (6.6616)	num of Positive tensor([  0, 148,   0,   0,   0,   0,  15,   0,  17,   0,  69,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:06:44,088] Iteration: [1780/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 6.9505 (6.6620)	num of Positive tensor([  0,   0,   0,   0,   2,   0, 131,  52,   0,  93,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:06:49,019] Iteration: [1790/2091]	Batch Time 0.493 (0.493)	Data Time 0.000 (0.001)	Loss 6.3527 (6.6604)	num of Positive tensor([ 0, 36,  0,  0,  0,  0,  0,  0, 74, 50,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:06:53,932] Iteration: [1800/2091]	Batch Time 0.503 (0.493)	Data Time 0.000 (0.001)	Loss 5.8312 (6.6579)	num of Positive tensor([  0,   0,  63,  46,   0,  32,   0, 106,   0,   0,  16,  79],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:06:58,857] Iteration: [1810/2091]	Batch Time 0.488 (0.493)	Data Time 0.000 (0.001)	Loss 6.1734 (6.6582)	num of Positive tensor([107,   0,   0,   0,   4,   0,   0,   0,  34,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:03,765] Iteration: [1820/2091]	Batch Time 0.509 (0.493)	Data Time 0.000 (0.001)	Loss 6.0414 (6.6571)	num of Positive tensor([  0,   0,   0,   0, 155,   0,   0,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:08,652] Iteration: [1830/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.6167 (6.6556)	num of Positive tensor([  0,  88,   0, 175,   0,  75,   0,   0,   0,  49,   0,  53],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:13,567] Iteration: [1840/2091]	Batch Time 0.506 (0.493)	Data Time 0.000 (0.001)	Loss 8.0797 (6.6557)	num of Positive tensor([100,   0,   4,   0,  58,  96,   0,   0,   0,   0, 159,  25],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:18,456] Iteration: [1850/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 5.5065 (6.6540)	num of Positive tensor([48, 48,  0,  0,  0,  0,  0,  0,  0, 13, 33, 68], device='cuda:0')	
+[INFO] [2021-12-15 08:07:23,375] Iteration: [1860/2091]	Batch Time 0.493 (0.493)	Data Time 0.000 (0.001)	Loss 5.0177 (6.6521)	num of Positive tensor([ 0,  0,  0,  2,  0,  0,  0,  0,  0,  0,  0, 83], device='cuda:0')	
+[INFO] [2021-12-15 08:07:28,303] Iteration: [1870/2091]	Batch Time 0.506 (0.493)	Data Time 0.000 (0.001)	Loss 7.0688 (6.6513)	num of Positive tensor([ 29,   2,  40,   0,  12,   1,   0,   2,   0,   0,   0, 173],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:33,201] Iteration: [1880/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 7.2726 (6.6508)	num of Positive tensor([ 48, 139,   0,  72,  70,   0,   0,   0, 114,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:38,134] Iteration: [1890/2091]	Batch Time 0.494 (0.493)	Data Time 0.000 (0.001)	Loss 5.9007 (6.6497)	num of Positive tensor([ 0,  0, 74,  0,  0,  0, 19,  0, 84,  0,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:07:43,057] Iteration: [1900/2091]	Batch Time 0.498 (0.493)	Data Time 0.000 (0.001)	Loss 6.6697 (6.6476)	num of Positive tensor([  0,  29, 210,   0,   0,   4, 174,   0, 161,   0,  66,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:47,969] Iteration: [1910/2091]	Batch Time 0.500 (0.493)	Data Time 0.000 (0.001)	Loss 5.8978 (6.6470)	num of Positive tensor([  6,   0,   0,   0,   0,  90,   0,   0,  12,   0,   0, 100],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:52,863] Iteration: [1920/2091]	Batch Time 0.486 (0.493)	Data Time 0.000 (0.001)	Loss 5.4180 (6.6459)	num of Positive tensor([  0,   0,   0,  92,   0,   2, 155, 106,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:07:57,791] Iteration: [1930/2091]	Batch Time 0.492 (0.493)	Data Time 0.000 (0.001)	Loss 7.0489 (6.6475)	num of Positive tensor([ 27,   0,  77,  72,   0,   0,  57,  76,   0, 137,  17,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:08:02,696] Iteration: [1940/2091]	Batch Time 0.510 (0.493)	Data Time 0.000 (0.001)	Loss 6.6181 (6.6477)	num of Positive tensor([ 64,   0, 373,   0,   0,   0,   0,  28,  16, 164,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:08:07,629] Iteration: [1950/2091]	Batch Time 0.493 (0.493)	Data Time 0.000 (0.001)	Loss 6.2648 (6.6476)	num of Positive tensor([123,   0,   0,   0, 109,   0,   0,  48,  20,   0,   0,  49],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:08:12,547] Iteration: [1960/2091]	Batch Time 0.489 (0.493)	Data Time 0.000 (0.001)	Loss 5.7740 (6.6469)	num of Positive tensor([  0,  13,   0,   0,   8,   0, 158,   7,  92,  30,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:08:17,433] Iteration: [1970/2091]	Batch Time 0.486 (0.493)	Data Time 0.000 (0.001)	Loss 7.5162 (6.6468)	num of Positive tensor([ 0,  0,  0, 35, 21,  0,  0, 24,  0,  0, 31, 19], device='cuda:0')	
+[INFO] [2021-12-15 08:08:22,333] Iteration: [1980/2091]	Batch Time 0.490 (0.493)	Data Time 0.000 (0.001)	Loss 7.9687 (6.6459)	num of Positive tensor([ 0,  0, 72,  0,  0,  0,  6, 40,  0,  0,  0, 57], device='cuda:0')	
+[INFO] [2021-12-15 08:08:27,216] Iteration: [1990/2091]	Batch Time 0.492 (0.493)	Data Time 0.000 (0.001)	Loss 6.6240 (6.6459)	num of Positive tensor([  0,   0,  74,  74,   0,   0,   0,   0,   0,   0,   0, 137],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:08:32,129] Iteration: [2000/2091]	Batch Time 0.503 (0.493)	Data Time 0.000 (0.001)	Loss 8.1305 (6.6483)	num of Positive tensor([ 0, 80, 11,  0,  0,  0,  0,  0,  0,  0,  0,  6], device='cuda:0')	
+[INFO] [2021-12-15 08:08:37,012] Iteration: [2010/2091]	Batch Time 0.485 (0.493)	Data Time 0.000 (0.001)	Loss 6.2546 (6.6478)	num of Positive tensor([ 17,   2,   0,   0, 125,  16,  96,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:08:41,924] Iteration: [2020/2091]	Batch Time 0.495 (0.493)	Data Time 0.000 (0.001)	Loss 6.8590 (6.6453)	num of Positive tensor([ 0,  0,  0,  0,  0,  0, 49,  0,  0, 35,  2,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:08:46,822] Iteration: [2030/2091]	Batch Time 0.493 (0.493)	Data Time 0.000 (0.001)	Loss 5.8724 (6.6443)	num of Positive tensor([  0, 170,  24,   0,   0,  86,   0,  44,   6,   0,   0, 102],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:08:51,713] Iteration: [2040/2091]	Batch Time 0.485 (0.493)	Data Time 0.000 (0.001)	Loss 6.3464 (6.6431)	num of Positive tensor([  0,   0,   0,   0, 111,   0,   5,   0, 102,   2,   0,  58],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:08:56,646] Iteration: [2050/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 6.9187 (6.6404)	num of Positive tensor([  0,   0,   0,   0,   0,   0,   0,   3, 107,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:01,579] Iteration: [2060/2091]	Batch Time 0.487 (0.493)	Data Time 0.000 (0.001)	Loss 8.1783 (6.6438)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0, 23, 34, 16,  0, 88], device='cuda:0')	
+[INFO] [2021-12-15 08:09:06,492] Iteration: [2070/2091]	Batch Time 0.493 (0.493)	Data Time 0.000 (0.001)	Loss 6.2896 (6.6429)	num of Positive tensor([  0,   2,   0,   0,   0,   0,   0,   0, 139,  44,   0,  42],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:11,378] Iteration: [2080/2091]	Batch Time 0.484 (0.493)	Data Time 0.000 (0.001)	Loss 5.7969 (6.6432)	num of Positive tensor([  0,  59,   0,   0,   0,  84,   0,   0,   0, 102,   0,   2],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:16,014] Iteration: [2090/2091]	Batch Time 0.260 (0.493)	Data Time 0.000 (0.001)	Loss 5.8493 (6.6422)	num of Positive tensor([  0,   0, 128,  31,   2,   0], device='cuda:0')	
+[INFO] [2021-12-15 08:09:16,749] #################### << Epoch   3 >> ####################
+[INFO] [2021-12-15 08:09:18,838] Iteration: [0/2091]	Batch Time 2.087 (2.087)	Data Time 1.517 (1.517)	Loss 8.0575 (8.0575)	num of Positive tensor([  0,   0, 108,  21,   1,  11,   0,   0,   0,  11,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:23,766] Iteration: [10/2091]	Batch Time 0.487 (0.638)	Data Time 0.000 (0.138)	Loss 6.1519 (6.5317)	num of Positive tensor([ 37,   4, 138,   0,  30,   0,  39,  71,   0,  80,   0,  33],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:28,750] Iteration: [20/2091]	Batch Time 0.499 (0.571)	Data Time 0.000 (0.073)	Loss 6.5640 (6.4145)	num of Positive tensor([ 23,  31,   0,  37,   0,  67,   0,   2,   0, 190,   0, 388],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:33,725] Iteration: [30/2091]	Batch Time 0.505 (0.548)	Data Time 0.000 (0.049)	Loss 6.8801 (6.4854)	num of Positive tensor([ 20,  55,  20,   0, 133,   0,  46,   0,   0,   0,  59,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:38,651] Iteration: [40/2091]	Batch Time 0.492 (0.534)	Data Time 0.000 (0.037)	Loss 4.5065 (6.4996)	num of Positive tensor([  0,   0,   0,  86,   6,   0, 115,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:43,596] Iteration: [50/2091]	Batch Time 0.501 (0.526)	Data Time 0.000 (0.030)	Loss 7.1351 (6.5229)	num of Positive tensor([ 0,  0,  0, 13,  6, 47,  0,  0, 60, 61,  0, 46], device='cuda:0')	
+[INFO] [2021-12-15 08:09:48,532] Iteration: [60/2091]	Batch Time 0.487 (0.521)	Data Time 0.000 (0.025)	Loss 5.8937 (6.4694)	num of Positive tensor([ 0,  0,  0,  0,  0,  0,  0,  0,  0, 49, 49,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:09:53,529] Iteration: [70/2091]	Batch Time 0.503 (0.518)	Data Time 0.000 (0.022)	Loss 6.5628 (6.4538)	num of Positive tensor([ 46,   0,   0,  11,   0,   0,  52,  12, 117,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:09:58,467] Iteration: [80/2091]	Batch Time 0.496 (0.515)	Data Time 0.000 (0.019)	Loss 6.2132 (6.4583)	num of Positive tensor([  0,  79,  99,   0,   0, 112,   0, 186,  61,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:03,383] Iteration: [90/2091]	Batch Time 0.500 (0.512)	Data Time 0.000 (0.017)	Loss 6.5584 (6.4910)	num of Positive tensor([  0,  88,  62,   0,   0,  94, 130,   0,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:08,326] Iteration: [100/2091]	Batch Time 0.485 (0.511)	Data Time 0.000 (0.015)	Loss 6.5667 (6.5043)	num of Positive tensor([  0,   0,   0,  52,  39,   0, 152,   0,  53,   0,  15,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:13,285] Iteration: [110/2091]	Batch Time 0.493 (0.509)	Data Time 0.000 (0.014)	Loss 7.2239 (6.4791)	num of Positive tensor([  6,   9,   0,   0,   0,   0,   0,  73, 107,   0,  90,  84],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:18,240] Iteration: [120/2091]	Batch Time 0.490 (0.508)	Data Time 0.000 (0.013)	Loss 5.1369 (6.4883)	num of Positive tensor([  0,   0,   0,   0,  25,   0,   0,   6,   0, 105,   0,  14],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:23,208] Iteration: [130/2091]	Batch Time 0.489 (0.507)	Data Time 0.000 (0.012)	Loss 6.1331 (6.4720)	num of Positive tensor([  0,  32,   0,  26,   0, 132,  40,   0,   0,   0,  20,  31],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:28,156] Iteration: [140/2091]	Batch Time 0.489 (0.506)	Data Time 0.000 (0.011)	Loss 6.1489 (6.4611)	num of Positive tensor([151, 191, 183,   0,  74,   0,   0,  17,   0,   0,   7,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:33,111] Iteration: [150/2091]	Batch Time 0.489 (0.506)	Data Time 0.000 (0.010)	Loss 6.0160 (6.4428)	num of Positive tensor([  0,   0,  23, 188,   0,   2,   0,  25,   0, 106,   0, 174],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:38,076] Iteration: [160/2091]	Batch Time 0.486 (0.505)	Data Time 0.000 (0.010)	Loss 6.6532 (6.4517)	num of Positive tensor([29,  0,  0,  0,  0, 58, 66,  2,  0,  0,  0,  2], device='cuda:0')	
+[INFO] [2021-12-15 08:10:43,019] Iteration: [170/2091]	Batch Time 0.503 (0.504)	Data Time 0.000 (0.009)	Loss 6.1838 (6.4608)	num of Positive tensor([  0,  55,   0,   0,   0,   0,  26,   0,  58,   0, 203,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:47,970] Iteration: [180/2091]	Batch Time 0.507 (0.504)	Data Time 0.000 (0.009)	Loss 5.7277 (6.4472)	num of Positive tensor([ 0,  0,  0,  2,  0,  0,  0,  0,  0,  0, 93,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:10:52,900] Iteration: [190/2091]	Batch Time 0.488 (0.503)	Data Time 0.000 (0.008)	Loss 5.9837 (6.4567)	num of Positive tensor([ 73,   0,   0,   0,   0,  43, 111,  54,   0,   0,   0,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:10:57,852] Iteration: [200/2091]	Batch Time 0.491 (0.503)	Data Time 0.000 (0.008)	Loss 6.4497 (6.4579)	num of Positive tensor([  3,   0,   0,   0,   0,  15,   0,   0,  53,  11,   0, 103],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:11:02,818] Iteration: [210/2091]	Batch Time 0.505 (0.503)	Data Time 0.000 (0.008)	Loss 6.5574 (6.4566)	num of Positive tensor([  0,   0,   0, 100,   0,   0,  10,   0,  40,  49,   0,  37],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:11:07,736] Iteration: [220/2091]	Batch Time 0.489 (0.502)	Data Time 0.000 (0.007)	Loss 6.6416 (6.4784)	num of Positive tensor([ 0, 25,  0, 99,  8,  7,  0,  0,  0, 14,  0,  7], device='cuda:0')	
+[INFO] [2021-12-15 08:11:12,720] Iteration: [230/2091]	Batch Time 0.508 (0.502)	Data Time 0.000 (0.007)	Loss 6.2355 (6.4765)	num of Positive tensor([ 0,  0, 85,  0,  0,  0,  0,  0,  7, 54,  0, 70], device='cuda:0')	
+[INFO] [2021-12-15 08:11:17,642] Iteration: [240/2091]	Batch Time 0.486 (0.502)	Data Time 0.000 (0.007)	Loss 6.7678 (6.4604)	num of Positive tensor([ 0,  0,  0, 43,  5,  0,  0,  0,  0, 22,  0,  0], device='cuda:0')	
+[INFO] [2021-12-15 08:11:22,602] Iteration: [250/2091]	Batch Time 0.486 (0.501)	Data Time 0.000 (0.006)	Loss 6.0044 (6.4735)	num of Positive tensor([  0,   0,   0,  30,   0,   0,   0, 164, 134, 436,  24,   0],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:11:27,580] Iteration: [260/2091]	Batch Time 0.490 (0.501)	Data Time 0.000 (0.006)	Loss 6.4566 (6.4679)	num of Positive tensor([131,   0,   0,   0, 219,  54,   0,   0, 177,  41,   0,   8],
+       device='cuda:0')	
+[INFO] [2021-12-15 08:11:32,516] Iteration: [270/2091]	Batch Time 0.489 (0.501)	Data Time 0.000 (0.006)	Loss 6.3298 (6.4656)	num of Positive tensor([ 86,   0,  51,   2,   5,  76,   0,   0, 102,   0,  98,  34],
+       device='cuda:0')	
+Traceback (most recent call last):
+  File "train_eval.py", line 234, in <module>
+  File "train_eval.py", line 113, in main
+    **kwargs)
+  File "train_eval.py", line 201, in train_epoch
+ValueError: too many values to unpack (expected 3)

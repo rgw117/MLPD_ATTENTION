@@ -1,0 +1,1 @@
+{"loss": NaN, "_runtime": 3245, "_timestamp": 1639555892, "_step": 32724, "cls_loss": NaN, "loc_loss": NaN, "diou_loss_": NaN, "n_positives": [0, 0, 0, 20, 136, 0, 89, 141, 0, 307, 0, 2], "_wandb": {"runtime": 3247}}
